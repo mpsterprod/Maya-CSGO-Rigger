@@ -61,8 +61,8 @@ Have fun.
 - if you need to export this follow this instruction:
 - When you are done animating, go to CSGO Skeletal Mesh folder.
 - Find the model you were animating and import it into Unreal Engine.
-- After that go to Maya, find the root bone *csgo_root* or for weapons *csgo_weapon_root*, select hierarchy underneath, bake it and export 
-- it without selecting anything else. I recommend incrementing before baking due to destructivity. 
+- After that go to Maya, find the root bone *csgo_root* or for weapons *csgo_weapon_root*, select hierarchy underneath, bake it and export it without selecting anything else.
+- I recommend incrementing before baking due to destructivity. 
 - Then import the animation into UE selecting the skeleton of the model you imported before.
 - Since all of the skeletons are the same you can apply the animation to any model in CSGO Skeletal Mesh folder. Use it wisely. 
 
