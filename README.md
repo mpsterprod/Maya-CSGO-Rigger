@@ -42,6 +42,7 @@ Maya tool for create rigs for csgo models!
 # Generate Rigs
 + Во все модах принцип и параметры одинаковы.
 + Есть параметр Create Skeletal Mesh - скрипт создаст папку (CSGO Skeletal Mesh) и создаст SkeletalMesh в .fbx для каждой модели!
+
 ![Image alt](https://github.com/mpsterprod/Maya-CSGO-Rigger/raw/master/misc/tool_generate.jpg)
 
 # Animations Weapons and Character
