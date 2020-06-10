@@ -20,10 +20,12 @@ Maya tool for create rigs for csgo models!
 - 1 Первый параметр - это задать путь до папки с .ModelFromBlender.fbx моделями
 - 2 Второй параметр - это добавление моделей в список
   ### Список можно редактировать
+  '''
   * Add Model - add fbx to list
   * Edit Model - replace with a new one fbx
   * Remove Model - remove select fbx from list
   * Clear All - clear all list
+  '''
 - 3 Третий параметр - выбор какой риг из папки "/Your Rigs" использовать при сборке
 - 4 Четвертый параметр - дает возможность добавить в список все .ModelFromBlender.fbx файлы из папки
 - 5 Пятый параметр - путь для сохранения ригой и скелетал мешей 
