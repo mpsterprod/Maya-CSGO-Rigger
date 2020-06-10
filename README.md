@@ -2,11 +2,11 @@
 Maya tool for create rigs for csgo models!
 
 # Setup
--1 Закиньте MPTools_Plugins.py и MP_Tools в "C:\Program Files\Autodesk\Maya2018\bin\plug-ins"
--2 Запустите Мауа, затем зайдите Windows/Settings/Plug-in Manager
--3 Активируйте плагин MPTools_Plugins.py
--4 Вверху появится меню MP Tools
--5 Запустите CSGO Rig Tool
+- 1 Закиньте MPTools_Plugins.py и MP_Tools в "C:\Program Files\Autodesk\Maya2018\bin\plug-ins"
+- 2 Запустите Мауа, затем зайдите Windows/Settings/Plug-in Manager
+- 3 Активируйте плагин MPTools_Plugins.py
+- 4 Вверху появится меню MP Tools
+- 5 Запустите CSGO Rig Tool
 
 # How it works
 Данная тулза имеет 3 мода создания рига:
