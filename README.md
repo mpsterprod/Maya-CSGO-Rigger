@@ -17,16 +17,16 @@ Maya tool for create rigs for csgo models!
 ![Image alt](https://github.com/mpsterprod/Maya-CSGO-Rigger/raw/master/misc/tool.jpg)
   
 ### Character Mode
-1 Первый параметр - это задать путь до папки с .ModelFromBlender.fbx моделями
-2 Второй параметр - это добавление моделей в список
+- 1 Первый параметр - это задать путь до папки с .ModelFromBlender.fbx моделями
+- 2 Второй параметр - это добавление моделей в список
   ### Список можно редактировать
-  Add Model - add fbx to list
-  Edit Model - replace with a new one fbx
-  Remove Model - remove select fbx from list
-  Clear All - clear all list
-3 Третий параметр - выбор какой риг из папки "/Your Rigs" использовать при сборке
-4 Четвертый параметр - дает возможность добавить в список все .ModelFromBlender.fbx файлы из папки
-5 Пятый параметр - путь для сохранения ригой и скелетал мешей 
+  * Add Model - add fbx to list
+  * Edit Model - replace with a new one fbx
+  * Remove Model - remove select fbx from list
+  * Clear All - clear all list
+- 3 Третий параметр - выбор какой риг из папки "/Your Rigs" использовать при сборке
+- 4 Четвертый параметр - дает возможность добавить в список все .ModelFromBlender.fbx файлы из папки
+- 5 Пятый параметр - путь для сохранения ригой и скелетал мешей 
 
 ### Weapons Mode
 1 Первый параметр - это задать путь до папки weapons fbx models
@@ -43,8 +43,8 @@ Maya tool for create rigs for csgo models!
 # Animations Weapons and Character
 
 
-# Warning
-1 Данная версия не поддерживает .fbx кроме .ModelFromBlender.fbx сгенерированных через Source-Blender-Exporter
+# Warning 
+1 Данная версия не поддерживает .fbx кроме .ModelFromBlender.fbx сгенерированных через [Source-Blender-Exporter](https://github.com/mpsterprod/Source-Blender-Exporter)
 2 Данная версия ограничена в колличестве создающихся оружий (вы можете проверять "weapons fbx models", возможно в будущем там станет больше моделей)
 3 Данная версия сохраняет файлы ригов только в MayaAscii
 4 Если у вас не будет ригов в "Your Rigs" - скрипт напишет вам об этом!
