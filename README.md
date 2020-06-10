@@ -51,11 +51,12 @@ Demonstration video will be published on the channel linked down below in near f
 
 # Using rig TEXT VERSION
 Drag and drop model of your desire into Maya viewport.
+
 Start animating.
+
 Have fun.
 
 *HOWEVER, if you need to export this follow this instruction:*
-
 When you are done animating, go to CSGO Skeletal Mesh folder.
 Find the model you were animating and import it into Unreal Engine.
 After that go to Maya, find the root bone *csgo_root* or for weapons *csgo_weapon_root*, select hierarchy underneath, bake it and export it without selecting anything else. I recommend incrementing before baking due to destructivity. 
