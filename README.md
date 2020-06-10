@@ -1,55 +1,68 @@
-# Maya Rigger For CSGO Models and vi iz anglii da?
-Инструмент для Maya 2018 для автоматического создания рига персонажей CSGO
+# Maya Rigger For CSGO Models for Bourgeoisie
+Rigging tool for Maya 2018, dedicated to creating and implementing custom rigs for all CSGO models.
 
-# Установка
-- 1 Закиньте MPTools_Plugins.py и MP_Tools в "C:\Program Files\Autodesk\Maya2018\bin\plug-ins".
-- 2 Запустите Мауа, зайдите в Windows/Settings/Plug-in Manager, поставьте галочку напротив MPTools_Plugins.py.
-- 3 Вверху появится новое меню MP Tools, зайдите в него и выберите CSGO RIG Tool.
+# Install
+- 1 Move MPTools_Plugins.py and MP_Tools into "C:\Program Files\Autodesk\Maya2018\bin\plug-ins".
+- 2 Launch Мауа, go to Windows/Settings/Plug-in Manager, tick on MPTools_Plugins.py.
+- 3 There now should be new menu atop called MP Tools, get in it and click CSGO RIG Tool.
 
-# Как Это Работает
-Данная тулза имеет 3 мода создания рига:
-  * 1 Character - Создаёт и применяет риг для моделей персонажей (Совместимо только с новым скелетом (custom_models) Ноябрь 2016 и новее).
-  * 2 Weapons - Создаёт и применяет риг для оружия (в данной версии инструмента используются только v_ модели).
-  * 3 POV - Создаёт и применяет риг для перспективы первого лица, то есть рук. В текущей версии программы не доступно. 
+# How does it work?
+This tool currently has 2.5 mods:
+  * 1 Character - Creates and applies rig for characters (Only compatible with new rigs (custom_models) Nov 2016 and newer).
+  * 2 Weapons - Creates and applies rigs for weapons (Current version of tool only supports v_ models).
+  * 3 POV - Creates and applies rig for POV. Not available at the moment. 
   
 ![Image alt](https://github.com/mpsterprod/Maya-CSGO-Rigger/raw/master/misc/tool.jpg)
   
-Для успешной работы этого инструмента на данном этапе требуется конвертация игровых моделей оружий и персонажей через блендер.
-По ссылке далее располагается нужный конвертер: [Source-Blender-Exporter](https://github.com/mpsterprod/Source-Blender-Exporter)
-### Меню Character
-- 1 Функция: Строка путь до папки с .ModelFromBlender.fbx моделями которые вы сконвертировали ранее.
-- 2 Вторая функция - Список моделей к которым применяется риг.
-  ### Список можно редактировать
+**In order for tool to work succesfully you need to convert models from CSGO(.mdl) to FBX in a specific way.
+The following link contains the converter you need:*** [Source-Blender-Exporter](https://github.com/mpsterprod/Source-Blender-Exporter)
+### Character Menu
+- 1 Function: Sring which points towars folder with your newly converted models .ModelFromBlender.fbx
+- 2 Function - List of models to which tool should apply rig.
+  ### List can be edited
   ```
-  * Add Model - Добавить моделей в список 
-  * Edit Model - Заменить имеющуюся в списке модель на другую
-  * Remove Model - Убрать выбранную модель из списка
-  * Clear All - Отчистить список
+  * Add Model - Adds model...
+  * Edit Model - Swaps model for another one of your choice
+  * Remove Model - Removes model...
+  * Clear All - ... Really?
   ```
-- 3 Третья функция - Выбор, какой риг будет применяться к моделям в списке.
-- 4 Четвертая функция - Позволяет выбрать между созданием ригов для всех моделей в папке указанной в 1-й функции или созданием ригов для всех моделей указанных в списке 2-й функции. 
-- 5 Пятая функция - Путь сохранения моделей с ригом.
+- 3 Function - Choose which rig will be applied to the models.
+- 4 Function - Allows for you to choose between applying rig to all models in folder which you pointed to in 1st function or applying rig to the models you listed in 2nd function. 
+- 5 Function - Where to save newly created rigs.
 
-### Меню Weapons
-Аналогично вкладке Character.
-Стоит помнить о том что здесь риги применимы исключительно к моделям типа v_, а не w_. 
+### Weapons Menu
+Same to the Character Menu.
+Tho its important to remember that current version of the tool only supports **v_** models, not **w_**  models
 
-### Меню POV 
-В текущей версии программы недоступно. 
+### POV Menu
+This number is not available now, please call back later. 
 
 # Generate Rigs
-+ Во все модах принцип и параметры одинаковы.
-+ Есть параметр Create Skeletal Mesh - скрипт создаст папку (CSGO Skeletal Mesh) и создаст SkeletalMesh в .fbx для каждой модели в списке. Критично для последующего переноса анимаций на SkeletalMesh, поскольку экспорт SkeletalMesh из модели к которой уже применён риг несёт с собой ряд проблем.
++ All menus share the same Generate rigs menu.
++ **Create skeletal mesh** tick - Script will create SkeletalMesh.fbx for each model in the list and put them in a new folder CSGO Skeletal Mesh.  Критично для последующего переноса анимаций на SkeletalMesh, поскольку экспорт SkeletalMesh из модели к которой уже применён риг несёт с собой ряд проблем. It is critical to do so for the following usage of the tool, due to the fact that exporting SkeletalMeshes from Maya will result in a number of problems. Dont export rigged meshes, use meshes from CSGO Skeletal Mesh folder. 
 
 ![Image alt](https://github.com/mpsterprod/Maya-CSGO-Rigger/raw/master/misc/tool_generate.jpg)
 
-# Использование рига
-Демонстрация будет опубликована на нижеуказанном канале в ближайшее время (середина июня). Ссылка позже будет заменена на конкретный видеоролик.
+# Using RIG
+Demonstration video will be published on the channel linked down below in near future (mid june). Link will be changed when the video will be released. 
 #### [Watch barabulyko video](https://www.youtube.com/channel/UCXvI8JRMsskPQrpQoSLeeBA)
 
-# Предупреждение и Ошибки 
-+ 1 **Если происходят какие либо ошибки - перезапустите Maya!**
-+ 2 На данный момент список ригов оружия ограничен. Проверяйте папку *"weapons fbx models"*, возможно в будущем там станет больше моделей.
-+ 3 Данная версия сохраняет файлы ригов только в MayaAscii ```(*.ma)```
-+ 4 Во избежание утечки памяти стоит перезапускать Мауа после каждой масштабной генерации!
+# Using rig TEXT VERSION
+Drag and drop model of your desire into Maya viewport.
+Start animating.
+Have fun.
 
+*HOWEVER, if you need to export this follow this instruction:*
+When you are done animating, go to CSGO Skeletal Mesh folder.
+Find the model you were animating and import it into Unreal Engine.
+After that go to Maya, find the root bone *csgo_root* or for weapons *csgo_weapon_root*, select hierarchy underneath, bake it and export it without selecting anything else. I recommend incrementing before baking due to destructivity. 
+Then import the animation into UE selecting the skeleton of the model you imported before.
+Since all of the skeletons are the same you can apply the animation to any model in CSGO Skeletal Mesh folder. Use it wisely. 
+
+If anything is unclear - watch video, and if then its still unclear - DM us on discord or twitter to ask questions first hand.
+
+# Warnings
++ 1 **If something doesnt match this readme or your common sense is tingling - RESTART MAYA!**
++ 2 Currently number of weapons rigged is limited. Check *"weapons fbx models"* folder, maybe there will be more at some point in future.
++ 3 Currently tool only saves rigs in  ```(*.ma)```
++ 4 In order to avoid memory leaks restart Maya after any big operations using this tool.
