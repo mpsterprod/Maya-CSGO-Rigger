@@ -43,7 +43,7 @@ Maya tool for create rigs for csgo models!
 Во все модах принцип и параметры одинаковы.
 Есть параметр Create Skeletal Mesh - скрипт создаст папку (CSGO Skeletal Mesh),и создаст SkeletalMesh в .fbx для каждой модели
 # Animations Weapons and Character
-
+#[Watch barabulyko video](https://www.youtube.com/channel/UCXvI8JRMsskPQrpQoSLeeBA)
 
 # Warning 
 1 Данная версия не поддерживает .fbx кроме .ModelFromBlender.fbx сгенерированных через [Source-Blender-Exporter](https://github.com/mpsterprod/Source-Blender-Exporter)
