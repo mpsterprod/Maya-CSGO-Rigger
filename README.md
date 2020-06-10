@@ -14,6 +14,8 @@ Maya tool for create rigs for csgo models!
   * 2 Для оружия (в данной версии используются только v_ модели из папки "weapons fbx models")
   * 3 Для моделей от первого лица (в данной версии не реализованно)
   
+![Image alt](https://github.com/mpsterprod/Maya-CSGO-Rigger/misc/tool.png)
+  
 ### Character Mode
 1 Первый параметр - это задать путь до папки с .ModelFromBlender.fbx моделями
 2 Второй параметр - это добавление моделей в список
