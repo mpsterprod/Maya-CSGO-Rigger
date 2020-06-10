@@ -39,7 +39,9 @@ This number is not available now, please call back later.
 
 # Generate Rigs
 + All menus share the same Generate rigs menu.
-+ **Create skeletal mesh** tick - Script will create SkeletalMesh.fbx for each model in the list and put them in a new folder CSGO Skeletal Mesh.  Критично для последующего переноса анимаций на SkeletalMesh, поскольку экспорт SkeletalMesh из модели к которой уже применён риг несёт с собой ряд проблем. It is critical to do so for the following usage of the tool, due to the fact that exporting SkeletalMeshes from Maya will result in a number of problems. Dont export rigged meshes, use meshes from CSGO Skeletal Mesh folder. 
++ **Create skeletal mesh** tick - Script will create SkeletalMesh.fbx for each model in the list and put them in a new folder CSGO Skeletal Mesh.
+It is critical to do so for the following usage of the tool, due to the fact that exporting SkeletalMeshes from Maya will result in a number of problems.
+Dont export rigged meshes, use meshes from CSGO Skeletal Mesh folder. 
 
 ![Image alt](https://github.com/mpsterprod/Maya-CSGO-Rigger/raw/master/misc/tool_generate.jpg)
 
