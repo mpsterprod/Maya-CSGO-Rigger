@@ -22,6 +22,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
+# GITHUB https://github.com/mpsterprod
+# debug version
 from PySide2 import QtCore
 from PySide2.QtCore import QPropertyAnimation, QRect
 from PySide2 import QtUiTools
