@@ -24,6 +24,7 @@ SOFTWARE.
 '''
 # GITHUB https://github.com/mpsterprod
 # debug version
+# no support
 from PySide2 import QtCore
 from PySide2.QtCore import QPropertyAnimation, QRect
 from PySide2 import QtUiTools
