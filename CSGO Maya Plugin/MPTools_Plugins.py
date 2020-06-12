@@ -3,6 +3,7 @@
 # SCRIPT MADE BY MP
 # YOUTUDE https://www.youtube.com/channel/UCXvI8JRMsskPQrpQoSLeeBA
 # DISCORD MP#9395
+# GITHUB https://github.com/mpsterprod
 ######################################################################
 import os
 import sys
