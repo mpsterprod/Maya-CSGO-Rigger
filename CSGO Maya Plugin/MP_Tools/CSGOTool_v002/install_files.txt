@@ -1,0 +1,6 @@
+// CSGO Rigger
+csgo_tool_byMP_release.py
+*plug_install.py
+shapes_view_world.ma
+weapons_base.txt
+__init__.py

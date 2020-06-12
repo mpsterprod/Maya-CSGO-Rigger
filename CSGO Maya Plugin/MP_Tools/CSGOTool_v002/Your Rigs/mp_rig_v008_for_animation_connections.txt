@@ -1,0 +1,112 @@
+// created by MP CSGO RIG
+// spine
+pc*ac_hip		pelvis
+pc*ac_FK_spine_1		spine_1
+pc*ac_FK_spine_2			spine_2
+pc*ac_chest		spine_3
+		      
+pc*ac_neck_2		neck_0
+pc*ac_head_0		head_0
+		     
+pc*jt_drv_clavicle_L		clavicle_L
+pc*jt_drv_clavicle_R		clavicle_R
+		       
+pc*jt_drv_arm_upper_L		arm_upper_L
+pc*jt_drv_arm_lower_L		arm_lower_L
+pc*jt_drv_hand_L		hand_L
+		     
+pc*jt_drv_arm_upper_R		arm_upper_R
+pc*jt_drv_arm_lower_R		arm_lower_R
+pc*jt_drv_hand_R			hand_R
+
+// finger L
+cAr*ac_finger_ring_meta_L		finger_ring_meta_L
+cAr*ac_drv_finger_ring_0_L		finger_ring_0_L
+cAr*ac_drv_finger_ring_1_L		finger_ring_1_L
+cAr*ac_drv_finger_ring_2_L		finger_ring_2_L
+
+
+cAr*ac_drv_finger_thumb_0_L		finger_thumb_0_L
+cAr*ac_drv_finger_thumb_1_L		finger_thumb_1_L
+cAr*ac_drv_finger_thumb_2_L		finger_thumb_2_L
+
+
+cAr*ac_finger_index_meta_L		finger_index_meta_L
+cAr*ac_drv_finger_index_0_L		finger_index_0_L
+cAr*ac_drv_finger_index_1_L		finger_index_1_L
+cAr*ac_drv_finger_index_2_L		finger_index_2_L
+
+
+cAr*ac_finger_pinky_meta_L		finger_pinky_meta_L
+cAr*ac_drv_finger_pinky_0_L		finger_pinky_0_L
+cAr*ac_drv_finger_pinky_1_L		finger_pinky_1_L
+cAr*ac_drv_finger_pinky_2_L		finger_pinky_2_L
+
+
+cAr*ac_finger_middle_meta_L		finger_middle_meta_L
+cAr*ac_drv_finger_middle_0_L	finger_middle_0_L
+cAr*ac_drv_finger_middle_1_L	finger_middle_1_L
+cAr*ac_drv_finger_middle_2_L	finger_middle_2_L
+
+// fingers R
+cAr*ac_finger_ring_meta_R		finger_ring_meta_R
+cAr*ac_drv_finger_ring_0_R		finger_ring_0_R
+cAr*ac_drv_finger_ring_1_R		finger_ring_1_R
+cAr*ac_drv_finger_ring_2_R 		finger_ring_2_R
+
+
+cAr*ac_drv_finger_thumb_0_R		finger_thumb_0_R
+cAr*ac_drv_finger_thumb_1_R		finger_thumb_1_R
+cAr*ac_drv_finger_thumb_2_R		finger_thumb_2_R
+
+
+
+cAr*ac_finger_index_meta_R		finger_index_meta_R
+cAr*ac_drv_finger_index_0_R		finger_index_0_R
+cAr*ac_drv_finger_index_1_R		finger_index_1_R
+cAr*ac_drv_finger_index_2_R		finger_index_2_R
+
+
+
+cAr*ac_finger_pinky_meta_R		finger_pinky_meta_R
+cAr*ac_drv_finger_pinky_0_R		finger_pinky_0_R
+cAr*ac_drv_finger_pinky_1_R		finger_pinky_1_R
+cAr*ac_drv_finger_pinky_2_R		finger_pinky_2_R
+
+
+
+cAr*ac_finger_middle_meta_R		finger_middle_meta_R
+cAr*ac_drv_finger_middle_0_R	finger_middle_0_R
+cAr*ac_drv_finger_middle_1_R	finger_middle_1_R
+cAr*ac_drv_finger_middle_2_R	finger_middle_2_R
+
+// leg
+pc*result_drv_leg_upper_L1	leg_upper_L
+pc*result_drv_leg_lower_L	leg_lower_L
+pc*result_drv_ankle_L	ankle_L
+pc*result_drv_ball_L	ball_L
+		       
+pc*Result_leg_upper_R	leg_upper_R
+pc*Result_leg_lower_R	leg_lower_R
+pc*Result_ankle_R	ankle_R
+pc*Result_ball_R	ball_R
+
+// twist
+cAr*ac_arm_upper_L_TWIST 		arm_upper_L_TWIST
+cAr*ac_arm_upper_L_TWIST1		arm_upper_L_TWIST1
+
+cAr*ac_arm_lower_L_TWIST 		arm_lower_L_TWIST
+cAr*ac_arm_lower_L_TWIST1 		arm_lower_L_TWIST1
+		           
+cAr*ac_arm_upper_R_TWIST  		arm_upper_R_TWIST
+cAr*ac_arm_upper_R_TWIST1  		arm_upper_R_TWIST1
+
+cAr*ac_arm_lower_R_TWIST 		arm_lower_R_TWIST
+cAr*ac_arm_lower_R_TWIST1 		arm_lower_R_TWIST1
+
+		          
+cAr*ac_leg_upper_L_TWIST 			leg_upper_L_TWIST
+cAr*ac_leg_upper_L_TWIST1 			leg_upper_L_TWIST1
+		            
+cAr*ac_leg_upper_R_TWIST 			leg_upper_R_TWIST
+cAr*ac_leg_upper_R_TWIST1  		leg_upper_R_TWIST1

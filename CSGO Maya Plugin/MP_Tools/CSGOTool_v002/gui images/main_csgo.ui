@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainwindow</class>
+ <widget class="QWidget" name="mainwindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::CustomContextMenu</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>CSGO RIG</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QPushButton" name="character_mode">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>6</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Character</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>10</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="weapon_mode">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>6</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 20pt &quot;Unispace&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Weapons</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pov_mode">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>6</y>
+     <width>81</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 20pt &quot;Unispace&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Pov</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="back_character">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>701</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/back/mainwdwdwdwdw.jpg);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="animation_tab_line">
+   <property name="geometry">
+    <rect>
+     <x>522</x>
+     <y>45</y>
+     <width>117</width>
+     <height>6</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 68);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_CHARACTER" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>691</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <widget class="QListWidget" name="List_fbx_characters">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>68</y>
+      <width>260</width>
+      <height>279</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_character_fbx">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>28</y>
+      <width>417</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_character_mb_save">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>388</y>
+      <width>417</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_folder_fbx_character">
+    <property name="geometry">
+     <rect>
+      <x>546</x>
+      <y>26</y>
+      <width>27</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/back/gui images/folder_icon_red.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_folder_mb_save_character">
+    <property name="geometry">
+     <rect>
+      <x>437</x>
+      <y>387</y>
+      <width>27</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/back/gui images/folder_icon_red.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="rig_type_from_folder_rigs">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>76</y>
+      <width>191</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="maxVisibleItems">
+     <number>100</number>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_character_add_model">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>69</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/back/kavo.png</normaloff>
+      <disabledoff>:/back/gui images/folder_icon_red.png</disabledoff>
+      <selectedoff>:/back/gui images/folder_icon_red.png</selectedoff>
+      <selectedon>:/back/gui images/folder_icon_red.png</selectedon>:/back/kavo.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_character_edit_model">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>114</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_character_remove_model">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>156</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_character_clear_alL_model">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>197</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radio_For_all">
+    <property name="geometry">
+     <rect>
+      <x>308</x>
+      <y>258</y>
+      <width>181</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>21</width>
+      <height>19</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radio_For_List">
+    <property name="geometry">
+     <rect>
+      <x>308</x>
+      <y>274</y>
+      <width>181</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>21</width>
+      <height>19</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="For_All_label_image">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>68</y>
+      <width>260</width>
+      <height>279</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(18, 18, 18);
+color: rgb(255, 255, 255);
+font: 75 italic 12pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string>FOR ALL FBX IN FOLDER!</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="info_label">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>68</y>
+      <width>260</width>
+      <height>279</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fbx_path_user_label_character">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>98</y>
+      <width>536</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="save_path_user_label_character">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>120</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 255, 38);
+font: 75 12pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string> Good Save Path</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="generate_user_label_character">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>502</x>
+      <y>230</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 255, 38);font: 75 12pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string> Good For GENERATE!</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="no_rig_1">
+    <property name="geometry">
+     <rect>
+      <x>406</x>
+      <y>94</y>
+      <width>351</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 0, 4);
+font: 75 11pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string>No rigs files, please check</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="no_rig2">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>124</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(255, 0, 4);
+font: 75 11pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string>script folder and restart script!</string>
+    </property>
+   </widget>
+   <zorder>lineEdit_character_fbx</zorder>
+   <zorder>lineEdit_character_mb_save</zorder>
+   <zorder>pushButton_folder_fbx_character</zorder>
+   <zorder>pushButton_folder_mb_save_character</zorder>
+   <zorder>rig_type_from_folder_rigs</zorder>
+   <zorder>pushButton_character_add_model</zorder>
+   <zorder>pushButton_character_edit_model</zorder>
+   <zorder>pushButton_character_remove_model</zorder>
+   <zorder>pushButton_character_clear_alL_model</zorder>
+   <zorder>radio_For_all</zorder>
+   <zorder>radio_For_List</zorder>
+   <zorder>List_fbx_characters</zorder>
+   <zorder>For_All_label_image</zorder>
+   <zorder>info_label</zorder>
+   <zorder>save_path_user_label_character</zorder>
+   <zorder>generate_user_label_character</zorder>
+   <zorder>no_rig_1</zorder>
+   <zorder>no_rig2</zorder>
+   <zorder>fbx_path_user_label_character</zorder>
+  </widget>
+  <widget class="QWidget" name="widget_WEAPON" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>701</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="TESTLABEL">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>150</y>
+      <width>101</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/back/mainwdwdwdwdw.jpg);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_weapon_fbx">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>38</y>
+      <width>417</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_weapon_mb_save">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>398</y>
+      <width>417</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="List_fbx_weapons">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>78</y>
+      <width>260</width>
+      <height>279</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="For_All_label_image_weapons">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>78</y>
+      <width>260</width>
+      <height>279</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(18, 18, 18);
+color: rgb(255, 255, 255);
+font: 75 italic 12pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string>FOR ALL FBX IN FOLDER!</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radio_For_List_weapon">
+    <property name="geometry">
+     <rect>
+      <x>308</x>
+      <y>284</y>
+      <width>181</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>21</width>
+      <height>19</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_weapon_remove_model">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>166</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_folder_fbx_weapon">
+    <property name="geometry">
+     <rect>
+      <x>546</x>
+      <y>36</y>
+      <width>27</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/back/gui images/folder_icon_red.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radio_For_all_weapon">
+    <property name="geometry">
+     <rect>
+      <x>308</x>
+      <y>268</y>
+      <width>181</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>21</width>
+      <height>19</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_folder_mb_save_weapon">
+    <property name="geometry">
+     <rect>
+      <x>437</x>
+      <y>397</y>
+      <width>27</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/back/gui images/folder_icon_red.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_weapon_clear_alL_model">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>207</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_generate_weapon">
+    <property name="geometry">
+     <rect>
+      <x>515</x>
+      <y>355</y>
+      <width>122</width>
+      <height>56</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_weapon_add_model">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>79</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/back/kavo.png</normaloff>
+      <disabledoff>:/back/gui images/folder_icon_red.png</disabledoff>
+      <selectedoff>:/back/gui images/folder_icon_red.png</selectedoff>
+      <selectedon>:/back/gui images/folder_icon_red.png</selectedon>:/back/kavo.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLabel" name="info_label_weapon">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>78</y>
+      <width>260</width>
+      <height>279</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="generate_user_label_weapon">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>502</x>
+      <y>240</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 255, 38);font: 75 12pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string> Good For GENERATE!</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="no_rig_weapon">
+    <property name="geometry">
+     <rect>
+      <x>406</x>
+      <y>74</y>
+      <width>351</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 0, 4);
+font: 75 11pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No FBX files, please&lt;/p&gt;&lt;p&gt; check folder :(&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="no_rig2_weapon">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>103</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(255, 0, 4);
+font: 75 11pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string>script folder and restart script!</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fbx_path_user_label_weapon">
+    <property name="geometry">
+     <rect>
+      <x>164</x>
+      <y>112</y>
+      <width>536</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="save_path_user_label_weapon">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>130</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 255, 38);
+font: 75 12pt &quot;Unispace&quot;;</string>
+    </property>
+    <property name="text">
+     <string> Good Save Path</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_weapon_edit_model">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>124</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>TESTLABEL</zorder>
+   <zorder>lineEdit_weapon_fbx</zorder>
+   <zorder>lineEdit_weapon_mb_save</zorder>
+   <zorder>List_fbx_weapons</zorder>
+   <zorder>radio_For_List_weapon</zorder>
+   <zorder>pushButton_folder_fbx_weapon</zorder>
+   <zorder>radio_For_all_weapon</zorder>
+   <zorder>pushButton_folder_mb_save_weapon</zorder>
+   <zorder>pushButton_generate_weapon</zorder>
+   <zorder>pushButton_weapon_add_model</zorder>
+   <zorder>info_label_weapon</zorder>
+   <zorder>For_All_label_image_weapons</zorder>
+   <zorder>generate_user_label_weapon</zorder>
+   <zorder>no_rig_weapon</zorder>
+   <zorder>no_rig2_weapon</zorder>
+   <zorder>fbx_path_user_label_weapon</zorder>
+   <zorder>save_path_user_label_weapon</zorder>
+   <zorder>pushButton_weapon_edit_model</zorder>
+   <zorder>pushButton_weapon_remove_model</zorder>
+   <zorder>pushButton_weapon_clear_alL_model</zorder>
+  </widget>
+  <widget class="QWidget" name="widget_POV" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>701</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>260</y>
+      <width>91</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CheckBox</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_GLOBAL_GENERATE">
+   <property name="geometry">
+    <rect>
+     <x>515</x>
+     <y>415</y>
+     <width>122</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 85, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="View_all_rigs_for_tool" native="true">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>500</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CSGO_show_SETTINGS">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CSGO_hide_SETTINGS">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>back_character</zorder>
+  <zorder>character_mode</zorder>
+  <zorder>pov_mode</zorder>
+  <zorder>weapon_mode</zorder>
+  <zorder>animation_tab_line</zorder>
+  <zorder>widget_POV</zorder>
+  <zorder>widget_WEAPON</zorder>
+  <zorder>widget_CHARACTER</zorder>
+  <zorder>pushButton_GLOBAL_GENERATE</zorder>
+  <zorder>View_all_rigs_for_tool</zorder>
+  <zorder>CSGO_show_SETTINGS</zorder>
+  <zorder>CSGO_hide_SETTINGS</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
