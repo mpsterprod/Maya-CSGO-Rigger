@@ -44,8 +44,8 @@
 ![Image alt](https://github.com/mpsterprod/Maya-CSGO-Rigger/raw/master/misc/tool_generate.jpg)
 
 # Использование рига
-Демонстрация будет опубликована на нижеуказанном канале в ближайшее время (середина июня). Ссылка позже будет заменена на конкретный видеоролик.
-#### [Watch barabulyko video](https://www.youtube.com/channel/UCXvI8JRMsskPQrpQoSLeeBA)
+В ролике записана не только демонстрация анимационных возможностей но и установка. Если вас интересует что-то конкретное - в прикреплённом комменте есть таймкоды. Так же будет запись стрима.
+#### [Watch barabulyko video](https://youtu.be/aix00aXFJVw)
 
 # Использование рига текстовая версия
 
