@@ -1,4 +1,4 @@
-# Maya Rigger For CSGO Models for Bourgeoisie
+# Maya Rigger For CSGO Models
 Rigging tool for Maya 2018, dedicated to creating and implementing custom rigs for all CSGO models.
 
 # Install
