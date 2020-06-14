@@ -46,8 +46,8 @@ Dont export rigged meshes, use meshes from CSGO Skeletal Mesh folder.
 ![Image alt](https://github.com/mpsterprod/Maya-CSGO-Rigger/raw/master/misc/tool_generate.jpg)
 
 # Using RIG
-Demonstration video will be published on the channel linked down below in near future (mid june). Link will be changed when the video will be released. 
-#### [Watch barabulyko video](https://www.youtube.com/channel/UCXvI8JRMsskPQrpQoSLeeBA)
+Following video contains not just RIG usage but also installation. Refer to timecodes in sticky comments. There also will be stream record.
+#### [Watch barabulyko video](https://youtu.be/aix00aXFJVw)
 
 # Using rig TEXT VERSION
 Drag and drop model of your desire into Maya viewport.
