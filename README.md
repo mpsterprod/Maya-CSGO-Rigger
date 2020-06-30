@@ -1,5 +1,5 @@
 # Maya Rigger For CSGO Models
-Rigging tool for Maya 2018, dedicated to creating and implementing custom rigs for all CSGO models.
+Rigging tool for Maya 2018/2020, dedicated to creating and implementing custom rigs for all CSGO models.
 
 # Install
 - 1 Move MPTools_Plugins.py and MP_Tools into "C:\Program Files\Autodesk\Maya2018\bin\plug-ins".
