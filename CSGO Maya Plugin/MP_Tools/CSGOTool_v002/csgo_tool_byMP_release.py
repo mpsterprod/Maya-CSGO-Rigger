@@ -13,13 +13,6 @@
 # script no perfect but everything works.
 # there may be bugs, if this happens to you, restart the script, if everything is still bad, make a restart Maya!
 ######################################################################
-from PySide2 import QtCore
-from PySide2.QtCore import QPropertyAnimation, QRect
-from PySide2 import QtUiTools
-from PySide2 import QtWidgets
-from PySide2 import QtGui
-from PySide2 import *
-from shiboken2 import wrapInstance
 import os
 import sys
 import time
@@ -32,6 +25,13 @@ import pymel.core as pm
 import maya.mel as mel
 import maya.OpenMayaUI as apiUI
 from maya import mel
+
+
+# import Pyside2      # work for maya version 2017 - 2020
+from PySide2 import QtCore
+from PySide2 import QtUiTools
+from PySide2 import QtWidgets
+from PySide2 import QtGui
 
 
 
