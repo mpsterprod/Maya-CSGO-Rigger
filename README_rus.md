@@ -1,5 +1,5 @@
 # Maya Rigger For CSGO Models
-Инструмент для Maya 2018 для автоматического создания рига персонажей CSGO
+Инструмент для Maya 2018/2020 для автоматического создания рига персонажей CSGO
 
 # Установка
 - 1 Закиньте MPTools_Plugins.py и MP_Tools в "C:\Program Files\Autodesk\Maya2018\bin\plug-ins".
