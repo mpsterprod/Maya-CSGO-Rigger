@@ -660,7 +660,7 @@ class MainWindow(QtWidgets.QDialog):
 		self.SIZE_Y = 0
 		'''
 
-		self.animation = QPropertyAnimation(animation_line, b'geometry')
+		self.animation = QtCore.QPropertyAnimation(animation_line, b'geometry')
 
 		speed_duration = 160
 
@@ -669,8 +669,8 @@ class MainWindow(QtWidgets.QDialog):
 			print('hello character')
 
 			self.animation.setDuration(speed_duration)
-			self.animation.setStartValue(QRect(self.GLOBAL_X, self.GLOBAL_Y, self.SIZE_X, self.SIZE_Y))
-			self.animation.setEndValue(QRect(126, lineY, 191, lineSizeY))
+			self.animation.setStartValue(QtCore.QRect(self.GLOBAL_X, self.GLOBAL_Y, self.SIZE_X, self.SIZE_Y))
+			self.animation.setEndValue(QtCore.QRect(126, lineY, 191, lineSizeY))
 			self.animation.start()
 		
 			
@@ -692,8 +692,8 @@ class MainWindow(QtWidgets.QDialog):
 			#animation_line.move(335, lineY)
 
 			self.animation.setDuration(speed_duration)
-			self.animation.setStartValue(QRect(self.GLOBAL_X, self.GLOBAL_Y, self.SIZE_X, self.SIZE_Y))
-			self.animation.setEndValue(QRect(335, lineY, 159, lineSizeY))
+			self.animation.setStartValue(QtCore.QRect(self.GLOBAL_X, self.GLOBAL_Y, self.SIZE_X, self.SIZE_Y))
+			self.animation.setEndValue(QtCore.QRect(335, lineY, 159, lineSizeY))
 			self.animation.start()
 
 
@@ -707,8 +707,8 @@ class MainWindow(QtWidgets.QDialog):
 			print('hello pov')
 
 			self.animation.setDuration(speed_duration)
-			self.animation.setStartValue(QRect(self.GLOBAL_X, self.GLOBAL_Y, self.SIZE_X, self.SIZE_Y))
-			self.animation.setEndValue(QRect(522, lineY, 117, lineSizeY))
+			self.animation.setStartValue(QtCore.QRect(self.GLOBAL_X, self.GLOBAL_Y, self.SIZE_X, self.SIZE_Y))
+			self.animation.setEndValue(QtCore.QRect(522, lineY, 117, lineSizeY))
 			self.animation.start()
 		
 
