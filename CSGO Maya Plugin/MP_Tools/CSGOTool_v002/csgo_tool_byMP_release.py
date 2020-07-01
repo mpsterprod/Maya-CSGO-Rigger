@@ -43,7 +43,7 @@ from shiboken2 import wrapInstance
 
 Pathversion = os.path.abspath(os.curdir)
 arrversion = Pathversion.replace('\\', ' ').split()
-version = str(arrversion[4]).replace('Maya','')   #version maya 
+version = str(mc.about(version=True))   #version maya 
 #print(version)
 path_script = os.environ['MAYA_APP_DIR']    #C:/Users/userName/Documents/maya   \2018\scripts\CSGOtool
 #print(path_script)
