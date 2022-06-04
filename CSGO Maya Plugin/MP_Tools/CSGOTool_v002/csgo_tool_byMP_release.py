@@ -27,7 +27,7 @@ import maya.OpenMayaUI as apiUI
 from maya import mel
 
 
-# import Pyside2      # work for maya version 2017 - 2020
+# import Pyside2	  # work for maya version 2017 - 2020
 from PySide2 import QtCore
 from PySide2 import QtUiTools
 from PySide2 import QtWidgets
@@ -45,7 +45,7 @@ Pathversion = os.path.abspath(os.curdir)
 arrversion = Pathversion.replace('\\', ' ').split()
 version = str(mc.about(version=True))   #version maya 
 #print(version)
-path_script = os.environ['MAYA_APP_DIR']    #C:/Users/userName/Documents/maya   \2018\scripts\CSGOtool
+path_script = os.environ['MAYA_APP_DIR']	#C:/Users/userName/Documents/maya   \2018\scripts\CSGOtool
 #print(path_script)
 del Pathversion
 
@@ -57,7 +57,7 @@ SCRIPT_DIRECTORY = os.environ['MAYA_LOCATION'] + "/bin/plug-ins/MP_Tools/CSGOToo
 
 RIGS_DIR = SCRIPT_DIRECTORY + '/Your Rigs' + '/'
 ALL_FILES_In_RIGS_DIR = os.listdir(RIGS_DIR)
-RIGS = list(filter(lambda x: x.endswith('.ma'), ALL_FILES_In_RIGS_DIR))
+RIGS = list([x for x in ALL_FILES_In_RIGS_DIR if x.endswith('.ma')])
 GUI_FOLDER = SCRIPT_DIRECTORY + '/gui images/'
 del ALL_FILES_In_RIGS_DIR
 '''
@@ -132,7 +132,7 @@ red_button_for_list_icon = [
 ]
 
 def hello():
-	print 'privet blin'
+	print('privet blin')
 
 
 image = "C:/editing/python/REALISER/mainwdwdwdwdw.jpg"
@@ -143,7 +143,7 @@ FOLDER_SHAPES = SCRIPT_DIRECTORY
 
 def maya_main_window():
 	main_window_ptr = omui.MQtUtil.mainWindow()
-	return wrapInstance(long(main_window_ptr), QtWidgets.QWidget)
+	return wrapInstance(int(main_window_ptr), QtWidgets.QWidget)
 
 #interface global 
 class MainWindow(QtWidgets.QDialog):
@@ -202,12 +202,12 @@ class MainWindow(QtWidgets.QDialog):
 		self.LIST_POV_OUT = []
 
 		#self.flags = QtCore.Qt.WindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint)
-        #self.setWindowFlags(self.flags)
+		#self.setWindowFlags(self.flags)
 
 		# WEAPONS
-		self.WEAPONS_PATH_FBX = ''    # path to fbx folder
-		self.WEAPON_PATH_SAVE = ''    # path to save rigs
-		self.check_path_Weapons = False    # check path
+		self.WEAPONS_PATH_FBX = ''	# path to fbx folder
+		self.WEAPON_PATH_SAVE = ''	# path to save rigs
+		self.check_path_Weapons = False	# check path
 		self.check_for_good_generate_weapons = False
 		self.check_path_to_save_weapons = False
 		self.check_weapon_mode_list_or_all_inits = 0
@@ -265,7 +265,7 @@ class MainWindow(QtWidgets.QDialog):
 		# save character
 		self.character_path_line_save = self.ui.lineEdit_character_mb_save
 		self.character_button_save = self.ui.pushButton_folder_mb_save_character
-		#     
+		#	 
 		# list character widget
 		self.character_list_widget = self.ui.List_fbx_characters
 		# character buttons
@@ -294,7 +294,7 @@ class MainWindow(QtWidgets.QDialog):
 		# save weapons
 		self.weapon_path_save_line = self.ui.lineEdit_weapon_mb_save
 		self.weapon_button_save = self.ui.pushButton_folder_mb_save_weapon
-		#     
+		#	 
 		# list weapon widget
 		self.weapon_list_widget = self.ui.List_fbx_weapons
 		# weapon buttons
@@ -329,7 +329,7 @@ class MainWindow(QtWidgets.QDialog):
 		test = self.ui.TESTLABEL
 		test.setPixmap(image)
 		
-        
+		
 	def init_tab_buttons(self):
 		character_mode_bt = self.ui.character_mode
 		weapon_mode_bt = self.ui.weapon_mode
@@ -538,11 +538,11 @@ class MainWindow(QtWidgets.QDialog):
 		label_fbx_path_check = self.ui.fbx_path_user_label_character
 
 		bad = 'Bad Path, no .fbx files :('
-		good = '       Good FBX path!'
+		good = '	   Good FBX path!'
 		bad_color = 'color: rgb(255, 0, 0);font: 75 12pt "Unispace";'
 		good_color = 'color: rgb(0, 255, 38);font: 75 12pt "Unispace";'
 
-		no_fbx = '       Add fbx!'
+		no_fbx = '	   Add fbx!'
 
 
 		if good_or_no == 0:
@@ -623,11 +623,11 @@ class MainWindow(QtWidgets.QDialog):
 		elif feel=='add fbx':
 			if self.BAD_FBX_PATH_WEAPONS == 0 and self.WEAPONS_PATH_FBX != '':
 				self.ui.no_rig2_weapon.show()
-				self.ui.no_rig2_weapon.setText('          Good FBX path!')
+				self.ui.no_rig2_weapon.setText('		  Good FBX path!')
 				self.ui.no_rig2_weapon.setStyleSheet('color: rgb(0, 255, 38);font: 75 12pt "Unispace";')
 			elif self.BAD_FBX_PATH_WEAPONS == 0 and self.WEAPONS_PATH_FBX == '':
 				self.ui.no_rig2_weapon.show()
-				self.ui.no_rig2_weapon.setText('          Add fbx!')
+				self.ui.no_rig2_weapon.setText('		  Add fbx!')
 				self.ui.no_rig2_weapon.setStyleSheet('color: rgb(255, 0, 4);font: 75 12pt "Unispace";')
 		elif feel=='add save':
 			if self.WEAPON_PATH_SAVE == '':
@@ -770,7 +770,7 @@ class MainWindow(QtWidgets.QDialog):
 			# list display
 			if self.WEAPONS_PATH_FBX == '':
 				self.display_weapon_info.show()
-				self.display_weapon_info.setText("      Add FBX Folder")
+				self.display_weapon_info.setText("	  Add FBX Folder")
 				self.display_weapon_info.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 				self.weapon_all.setEnabled(False)
 				self.weapon_list.setEnabled(False)
@@ -779,13 +779,13 @@ class MainWindow(QtWidgets.QDialog):
 				if self.BAD_FBX_PATH_WEAPONS==0:
 					if self.LIST_PATHS_WEAPONS == []:
 						self.display_weapon_info.show()
-						self.display_weapon_info.setText("        Add model")
+						self.display_weapon_info.setText("		Add model")
 						self.display_weapon_info.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 					else:
 						self.display_weapon_info.hide()
 				if self.LIST_WEAPON_IN_FOLDER == []:
 					self.display_weapon_info.show()
-					self.display_weapon_info.setText("      Add FBX Folder")
+					self.display_weapon_info.setText("	  Add FBX Folder")
 					self.display_weapon_info.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 					self.weapon_all.setEnabled(False)
 					self.weapon_list.setEnabled(False)
@@ -795,7 +795,7 @@ class MainWindow(QtWidgets.QDialog):
 						self.display_weapon_info.hide()
 					else:
 						self.display_weapon_info.show()
-						self.display_weapon_info.setText("        Add model")
+						self.display_weapon_info.setText("		Add model")
 						self.display_weapon_info.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 				self.weapon_all.setEnabled(True)
 				self.weapon_list.setEnabled(True)
@@ -864,13 +864,13 @@ class MainWindow(QtWidgets.QDialog):
 		info_to_user = self.ui.info_label
 
 		self.Display_Update()
-		print('hz = '+str(self.BAD_FBX_PATH))
+		print(('hz = '+str(self.BAD_FBX_PATH)))
 		if self.BAD_FBX_PATH == 1:
 			print('----------------------------------------')
 			print('------Bad path, no fbx files :(-------')
 			print('----------------------------------------')
 			info_to_user.show()
-			info_to_user.setText("      Add FBX Folder")
+			info_to_user.setText("	  Add FBX Folder")
 			info_to_user.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 			self.character_all.setEnabled(False)
 			self.character_list.setEnabled(False)
@@ -883,7 +883,7 @@ class MainWindow(QtWidgets.QDialog):
 		if self.Check_For == 1:
 			if self.FBX_CHARACTER_FOLDER != '':
 				if self.SAVE_CHARACTER_FOLDER != '':
-					print(self.SAVE_CHARACTER_FOLDER)
+					print((self.SAVE_CHARACTER_FOLDER))
 					self.GOOD_GENERATE_OR_BAD(good_or_no = 1)
 
 
@@ -907,13 +907,13 @@ class MainWindow(QtWidgets.QDialog):
 
 		if self.FBX_CHARACTER_FOLDER == '':
 			info_to_user.show()
-			info_to_user.setText("      Add FBX Folder")
+			info_to_user.setText("	  Add FBX Folder")
 			info_to_user.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 			self.character_all.setEnabled(False)
 			self.character_list.setEnabled(False)
 		else:
 			info_to_user.show()
-			info_to_user.setText("        Add model")
+			info_to_user.setText("		Add model")
 			info_to_user.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 			self.character_all.setEnabled(True)
 			self.character_list.setEnabled(True)
@@ -946,47 +946,47 @@ class MainWindow(QtWidgets.QDialog):
 		print('mode active or last = ' + str(self.MODE))
 		'''
 		print('------------------------------------------')
-		print('----------      UPDATE DATA     ----------')
+		print('----------	  UPDATE DATA	 ----------')
 		print('------------------------------------------')
 
 		if self.Check_For == 0 :
 			#for list
 			print('for model in list')
-			print('folder import = ' + self.FBX_CHARACTER_FOLDER)
-			print('folder export = ' + self.SAVE_CHARACTER_FOLDER)
-			print('mode export = ' + str(self.Check_For))
+			print(('folder import = ' + self.FBX_CHARACTER_FOLDER))
+			print(('folder export = ' + self.SAVE_CHARACTER_FOLDER))
+			print(('mode export = ' + str(self.Check_For)))
 			if self.LIST_CHARACTERS_PATHS != []:
 				self.GOOD_GENERATE_OR_BAD(good_or_no = 1)
 				for x in self.LIST_CHARACTERS_PATHS:
-					print("for import " + x)
+					print(("for import " + x))
 			else:
 				print('----add model pls ----')
 				self.GOOD_GENERATE_OR_BAD(good_or_no = 0)
-			print('rig use = ' + self.RIG_USE)
+			print(('rig use = ' + self.RIG_USE))
 		elif self.Check_For == 1:
 			#for all
 			print('for all model')
-			print('folder import = ' + self.FBX_CHARACTER_FOLDER)
-			print('folder export = ' + self.SAVE_CHARACTER_FOLDER)
-			print('mode export = ' + str(self.Check_For))
+			print(('folder import = ' + self.FBX_CHARACTER_FOLDER))
+			print(('folder export = ' + self.SAVE_CHARACTER_FOLDER))
+			print(('mode export = ' + str(self.Check_For)))
 			if self.LIST_ALL_CHARACTERS_IN_FORLDER != []:
 				if self.FBX_CHARACTER_FOLDER != '':
 					if self.SAVE_CHARACTER_FOLDER != '':
 						self.GOOD_GENERATE_OR_BAD(good_or_no = 1)
 						for path_fbx in self.LIST_ALL_CHARACTERS_IN_FORLDER:
-								print("for import " + path_fbx)
+								print(("for import " + path_fbx))
 			else:
 				self.GOOD_GENERATE_OR_BAD(good_or_no = 0)
 				print('---- no models in folder! ----')
-			print('rig use = ' + self.RIG_USE)
+			print(('rig use = ' + self.RIG_USE))
 		print('==========================================')
 	
 		if self.MODE==1:
 			print('====== weapon ======')
-			print(self.WEAPONS_PATH_FBX)
-			print(self.WEAPON_PATH_SAVE)
-			print(self.LIST_WEAPON_IN_FOLDER)
-			print(self.LIST_PATHS_WEAPONS)
+			print((self.WEAPONS_PATH_FBX))
+			print((self.WEAPON_PATH_SAVE))
+			print((self.LIST_WEAPON_IN_FOLDER))
+			print((self.LIST_PATHS_WEAPONS))
 		if self.SAVE_CHARACTER_FOLDER != '':
 			self.ui.save_path_user_label_character.setText('Good Save path!')
 			self.ui.save_path_user_label_character.setStyleSheet('color: rgb(0, 255, 38);font: 75 12pt "Unispace";')
@@ -1310,8 +1310,8 @@ class MainWindow(QtWidgets.QDialog):
 		if ALL_PATHS == []:
 			return
 
-		#ALL_PATHS = []       # self.LIST_CHARACTERS_PATHS
-		#folder_fbx = ''      # self.FBX_CHARACTER_FOLDER
+		#ALL_PATHS = []	   # self.LIST_CHARACTERS_PATHS
+		#folder_fbx = ''	  # self.FBX_CHARACTER_FOLDER
 
 
 		#if self.MODE == 0:
@@ -1432,7 +1432,7 @@ class MainWindow(QtWidgets.QDialog):
 				
 				#create for all - mode
 				check = os.listdir(self.FBX_CHARACTER_FOLDER)
-				name_fbx = list(filter(lambda x: x.endswith('ModelFromBlender.fbx'), check))
+				name_fbx = list([x for x in check if x.endswith('ModelFromBlender.fbx')])
 
 				if name_fbx == [] or name_fbx == None:
 					print('Bad path, no fbx files :(')
@@ -1485,7 +1485,7 @@ class MainWindow(QtWidgets.QDialog):
 						self.character_path_line_fbx.setText(self.FBX_CHARACTER_FOLDER)
 						#create for all - mode
 						check = os.listdir(self.FBX_CHARACTER_FOLDER)
-						name_fbx = list(filter(lambda x: x.endswith('ModelFromBlender.fbx'), check))
+						name_fbx = list([x for x in check if x.endswith('ModelFromBlender.fbx')])
 						if name_fbx == [] or name_fbx == None:
 							print('Bad path, no fbx files :(')
 							self.BAD_FBX_PATH_OR_GOOD(good_or_no = 0)
@@ -1496,7 +1496,7 @@ class MainWindow(QtWidgets.QDialog):
 							return
 						# check characters files
 						print('tyt')
-						print(str(name_fbx))
+						print((str(name_fbx)))
 						print('tyt')
 						new_name_fbx = []
 						for fbx in name_fbx:
@@ -1531,7 +1531,7 @@ class MainWindow(QtWidgets.QDialog):
 						self.weapon_path_fbx_line.setText(self.WEAPONS_PATH_FBX)
 						#create for all - mode
 						check = os.listdir(self.WEAPONS_PATH_FBX)
-						name_fbx = list(filter(lambda x: x.endswith('ModelFromBlender.fbx'), check))
+						name_fbx = list([x for x in check if x.endswith('ModelFromBlender.fbx')])
 						if name_fbx == [] or name_fbx == None or name_fbx != []:
 							BAD = True
 							for fbx in name_fbx:
@@ -1540,7 +1540,7 @@ class MainWindow(QtWidgets.QDialog):
 									BAD = False
 									break
 								'''
-								if fbx.find('v_')!=-1:    # ONLY FOR VIEW TO WORLD
+								if fbx.find('v_')!=-1:	# ONLY FOR VIEW TO WORLD
 									BAD = False
 									break
 							if BAD:
@@ -1681,7 +1681,7 @@ class MainWindow(QtWidgets.QDialog):
 
 			if self.Check_For == 0:
 				#for list
-				print('mode generate = '+str(mode_generate))
+				print(('mode generate = '+str(mode_generate)))
 
 				#open dialog for start
 				print('dadadada')
@@ -1692,7 +1692,7 @@ class MainWindow(QtWidgets.QDialog):
 								stg = Generate_Start(self,mode = 0, fbx = self.FBX_CHARACTER_FOLDER, save = self.SAVE_CHARACTER_FOLDER, file = self.RIG_USE, list_model = self.LIST_CHARACTERS_PATHS)
 								stg.exec_()
 			elif self.Check_For == 1:
-				print('mode generate = '+str(mode_generate))
+				print(('mode generate = '+str(mode_generate)))
 				#for all 
 				#open dialog for start
 				print('allll')
@@ -2257,7 +2257,7 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 	LONG_LIST_FILES = list_fbx_weapons
 	del list_fbx_weapons
 	WEAPON_ROOT_FILES = []
-	print master_global
+	print(master_global)
 	PATH_FOLDER_FBX = path_input
 	folder_save_maya_weapons = save_root
 	folder_root_fbx = path_root_weapons
@@ -2286,8 +2286,8 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 		all_chl = mc.ls(obj_w, dagObjects = True)
 		new = []
 		for dag in all_chl:
-		    if dag.find('_end') == -1:
-		        new.append(dag)
+			if dag.find('_end') == -1:
+				new.append(dag)
 		return new
 
 	def CreateFolder(folder = '', name_folder = ''):
@@ -2296,7 +2296,7 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 			if not os.path.exists(directory):
 				os.makedirs(directory)
 		except OSError:
-			print ('Error: Creating directory. ' +  directory)
+			print(('Error: Creating directory. ' +  directory))
 
 
 	#create folders in root
@@ -2308,7 +2308,7 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 		pass
 
 	SHAPES_RIGS_FBX_FILE = 'ww'
-	#   one for one               or                one for several
+	#   one for one			   or				one for several
 	if SHAPES_RIGS_FBX_FILE == '':
 		print('Check please fbx file shapes from script folder and restart generate!')
 		return
@@ -3312,7 +3312,7 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 
 
 				##########################################
-				#    exception
+				#	exception
 				if parent != '':
 					if parent.find('tec9') != -1:
 						#fix mag ctrls
@@ -3432,7 +3432,7 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 
 			
 
-			#    EXTRA METHOD
+			#	EXTRA METHOD
 			revo = False
 			valera_mesh = mc.ls(type = 'mesh')
 			for xs in valera_mesh:
@@ -4982,13 +4982,13 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 
 						#create new grp
 						mel.eval(
-						    'select -cl  ;'
-						    'doGroup 0 1 1;'
-						    'select -r L_SHAPEShape ;'
-						    'select -r L_SHAPE_KShape ;'
-						    'select -r null1 ;'
-						    'parent -r -s "L_SHAPEShape" "L_SHAPE_KShape" "null1";'
-						    )
+							'select -cl  ;'
+							'doGroup 0 1 1;'
+							'select -r L_SHAPEShape ;'
+							'select -r L_SHAPE_KShape ;'
+							'select -r null1 ;'
+							'parent -r -s "L_SHAPEShape" "L_SHAPE_KShape" "null1";'
+							)
 						mc.rename('null1', 'L_Knife_CTRL')
 
 						# R
@@ -5013,14 +5013,14 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 
 						#create new grp
 						mel.eval(
-						    'select -cl  ;'
-						    'doGroup 0 1 1;'
-						    'select -r R_SHAPE_KShape ;'
-						    'select -r R_SHAPE_Shape1 ;'
-						    'select -r R_SHAPE_Shape2 ;'
-						    'select -r null1 ;'
-						    'parent -r -s "R_SHAPE_KShape" "R_SHAPE_Shape1" "R_SHAPE_Shape2" "null1";'
-						    )
+							'select -cl  ;'
+							'doGroup 0 1 1;'
+							'select -r R_SHAPE_KShape ;'
+							'select -r R_SHAPE_Shape1 ;'
+							'select -r R_SHAPE_Shape2 ;'
+							'select -r null1 ;'
+							'parent -r -s "R_SHAPE_KShape" "R_SHAPE_Shape1" "R_SHAPE_Shape2" "null1";'
+							)
 						mc.rename('null1', 'R_Knife_CTRL')
 
 						mc.parent('v_weapon_knife_L_CTRL',GLOBAL_MASTER)
@@ -5649,11 +5649,11 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 				mc.file(folder_save_maya_weapons + '/gun/' + name_obj + '.ma', exportAll = 1, force = 1, type = 'mayaBinary')
 				del name_obj
 				#create new
-				mel.eval('file -f -new')       # WORLD M4A1_S
+				mel.eval('file -f -new')	   # WORLD M4A1_S
 
 
 
-		elif import_model.find('w_pist_elite') != -1:     # WORLD ELITE
+		elif import_model.find('w_pist_elite') != -1:	 # WORLD ELITE
 			#for elite
 			if elite_done == False:
 				#exception paths
@@ -5685,26 +5685,26 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 			save_root = 'knife'
 
 			#create new scene
-		  	mel.eval('file -f -new')
+			mel.eval('file -f -new')
 
-		  	#import models
-		  	mc.file(path, i=True, mergeNamespacesOnClash=True, namespace=':')
+			#import models
+			mc.file(path, i=True, mergeNamespacesOnClash=True, namespace=':')
 
 			#clear joints
-		  	jnt_objs = mc.ls(type = 'joint')
+			jnt_objs = mc.ls(type = 'joint')
 			for j in range(0,len(jnt_objs)):
-			    #get rotarion joint
-			    attRX = mc.getAttr(jnt_objs[j] + '.rotateX')
-			    attRY = mc.getAttr(jnt_objs[j] + '.rotateY')
-			    attRZ = mc.getAttr(jnt_objs[j] + '.rotateZ')
-			    #set to joint orient
-			    mc.setAttr(jnt_objs[j] + '.joint Orient X', attRX)
-			    mc.setAttr(jnt_objs[j] + '.joint Orient Y', attRY)
-			    mc.setAttr(jnt_objs[j] + '.joint Orient Z', attRZ)
-			    #clear rotation joints
-			    mc.setAttr(jnt_objs[j] + '.rotateX', 0)
-			    mc.setAttr(jnt_objs[j] + '.rotateY', 0)
-			    mc.setAttr(jnt_objs[j] + '.rotateZ', 0)
+				#get rotarion joint
+				attRX = mc.getAttr(jnt_objs[j] + '.rotateX')
+				attRY = mc.getAttr(jnt_objs[j] + '.rotateY')
+				attRZ = mc.getAttr(jnt_objs[j] + '.rotateZ')
+				#set to joint orient
+				mc.setAttr(jnt_objs[j] + '.joint Orient X', attRX)
+				mc.setAttr(jnt_objs[j] + '.joint Orient Y', attRY)
+				mc.setAttr(jnt_objs[j] + '.joint Orient Z', attRZ)
+				#clear rotation joints
+				mc.setAttr(jnt_objs[j] + '.rotateX', 0)
+				mc.setAttr(jnt_objs[j] + '.rotateY', 0)
+				mc.setAttr(jnt_objs[j] + '.rotateZ', 0)
 
 
 			#find locators
@@ -5814,20 +5814,20 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 			mc.file(folder_save_maya_weapons + '/knife/' + name_obj + '.ma', exportAll = 1, force = 1, type = 'mayaBinary')
 			del name_obj
 			#create new
-			mel.eval('file -f -new')    # WORLD KNIFE
+			mel.eval('file -f -new')	# WORLD KNIFE
 
 
-		elif import_model.find('v_') != -1:   #                VIEW TO WORLD
+		elif import_model.find('v_') != -1:   #				VIEW TO WORLD
 			#print('Warning! view to world generate')
 
 
 
 			# init type view models
 
-			if import_model.find('knife') != -1:    #  view world knife
+			if import_model.find('knife') != -1:	#  view world knife
 				#knife view world
 				pass
-			elif import_model.find('eq') != -1:    #  view world eq
+			elif import_model.find('eq') != -1:	#  view world eq
 				pass
 			elif import_model.find('v_mach_m249para') != -1:
 				if mach_m249para == False:
@@ -5937,7 +5937,7 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 					for mm in imports_model:
 						mc.file(PATH_FOLDER_FBX+'/'+mm, i=True, mergeNamespacesOnClash=True, namespace=':')
 
-					v_mach_negev = True    #  view world v_mach_negev
+					v_mach_negev = True	#  view world v_mach_negev
 
 
 			# OTHERS MODELS
@@ -6321,9 +6321,9 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 
 					#creates transform for ctrls
 					#shapes = ['Weapon_CTRL_pist','L_HAND_CTRL_pist','R_HAND_CTRL_pist']
-					#        R
-		 			mc.parent(mass_objects[2], nulls[0])
-		 			mc.setAttr(mass_objects[2] + '.translate',0,0,0)
+					#		R
+					mc.parent(mass_objects[2], nulls[0])
+					mc.setAttr(mass_objects[2] + '.translate',0,0,0)
 					mc.setAttr(mass_objects[2] + '.rotate',0,0,0)
 
 					#create grps
@@ -6349,7 +6349,7 @@ def Weapon_builder(master_global=str,path_input=str,path_root_weapons = '', save
 					mc.setAttr(mass_objects[2] + '.rotate',0,0,0)
 
 
-					#    L
+					#	L
 
 					grp_name_L = mass_objects[1] + '_grp'
 					mel.eval('select -cl  ;')
@@ -6531,11 +6531,11 @@ class Customizer(object):
 				self.JointOrientRotationUP(joints=mc.ls(type='joint'))
 
 
-			    #unparent bones
+				#unparent bones
 				loc_object_joint = []
 
 				for loc in mc.ls(type = 'locator'):
-					print loc.replace('Shape','')
+					print((loc.replace('Shape','')))
 					# get chdl
 					heh = []
 					if mc.listRelatives(loc.replace('Shape',''), children=1) is None:
@@ -6549,7 +6549,7 @@ class Customizer(object):
 					if heh != []:
 						# get chldrs
 						for i in heh:
-							print 'joint ==      '+i
+							print(('joint ==	  '+i))
 							mc.parent(i, world=True)
 							loc_object_joint.append(i)
 						mc.delete(loc.replace('Shape',''))
@@ -6567,15 +6567,15 @@ class Customizer(object):
 						object_mesh.append(ab)
 				#print(object_mesh) #for debug
 
-		        #import file rig
+				#import file rig
 
 				mc.file(rigs_path + file_rig_name,ignoreVersion = True, i=True, mergeNamespacesOnClash=True, namespace=':')
 
-		        #parent content to rigs 
+				#parent content to rigs 
 				rig_path_mesh_grp = 'csgo_character|mesh'
 				rig_path_skeleton_grp = 'csgo_character|your_skeleton'
 
-		        #parent mesh 
+				#parent mesh 
 				for mesh in object_mesh:
 					mc.parent(mesh, rig_path_mesh_grp)
 				#parent skeleton
@@ -6584,7 +6584,7 @@ class Customizer(object):
 					if not mc.listRelatives(j, parent=1):
 						one_level_joints.append(j)
 
-		        # get all joint in one level dag
+				# get all joint in one level dag
 				create_root = True
 				if create_root:
 					# create root joint
@@ -6608,20 +6608,20 @@ class Customizer(object):
 						mc.parentConstraint("ac_master","csgo_root",maintainOffset=1)
 						mc.scaleConstraint("ac_master","csgo_root",maintainOffset=1)
 					else:
-						print 'csgo root not found!'
+						print('csgo root not found!')
 						continue
 				
 
 
 
-		        #get path to objects
-				print 'file connect = '+ RIGS_DIR+file_rig_name.replace('.ma','_connections.txt')
+				#get path to objects
+				print(('file connect = '+ RIGS_DIR+file_rig_name.replace('.ma','_connections.txt')))
 				File_connenections = self.GetFilaData(file_F=RIGS_DIR+file_rig_name.replace('.ma','_connections.txt'))
 				if File_connenections is None or File_connenections == []:
 					continue
 				# get for root or not
 				for line in File_connenections:
-					print line
+					print(line)
 					if line == "": # this commentary
 						continue
 					if line[0] == "/": # this commentary
@@ -6636,7 +6636,7 @@ class Customizer(object):
 						mc.connectAttr(get_sp[0]+'.rotate',get_sp[1]+'.rotate')
 
 
-		        #invisible skeleton
+				#invisible skeleton
 				mc.setAttr('csgo_character|your_skeleton.visibility', 0)
 
 				#delete from RAM data rig 
@@ -6644,19 +6644,19 @@ class Customizer(object):
 				#del RIGHT_FINGERS_RIG
 				#del LEG_RIG_DATA
 
-		        #delete from RAM data skeleton 
+				#delete from RAM data skeleton 
 				#del LIST_SKELETON_CSGO_DATA
 				#del LIST_SKELETON_LEGS
 				#del LEFT_FINGERS_SKELETON
 				#del RIGHT_FINGERS_SKELETON
-		        
-		        #create layer mesh
+				
+				#create layer mesh
 				ln = 'csgo_mesh'
 
 				mc.setAttr( '%s.displayType' % ln, 2)
 
-		        #export .ma\
-		        #name_save_fuile = FOLDER_EXPORT_MA_FILES_RIGS + import_model.replace('.qc.ModelFromBlender.fbx', '.mb')
+				#export .ma\
+				#name_save_fuile = FOLDER_EXPORT_MA_FILES_RIGS + import_model.replace('.qc.ModelFromBlender.fbx', '.mb')
 				mc.file(save_path + '/' + name_file.replace('.qc.ModelFromBlender.fbx', '') + name_maya_export_file,exportAll = 1, ignoreVersion = True ,force = 1, type = 'mayaAscii')
 				mel.eval('file -f -new')
 
@@ -6672,7 +6672,7 @@ class Customizer(object):
 			mel.eval('file -f -new')
 			self.restart()
 			self.Final = True
-		   	#open restart dialog
+			#open restart dialog
 		
 		elif mode_use == 1:
 			#start for weapons
@@ -6725,7 +6725,7 @@ class Customizer(object):
 		print('weaponew CREATE')
 		for fbx in fbx_import:
 			print(fbx_path)
-			print('To generate ... = '+fbx)   # fbx = path to file or fbx = save_path+/+name.fbx
+			print(('To generate ... = '+fbx))   # fbx = path to file or fbx = save_path+/+name.fbx
 			# NEW SCENE
 			mel.eval('file -f -new;')
 			
@@ -6993,7 +6993,7 @@ class Customizer(object):
 			if not os.path.exists(directory):
 				os.makedirs(directory)
 		except OSError:
-			print ('Error: Creating directory. ' +  directory)
+			print(('Error: Creating directory. ' +  directory))
 		return directory
 
 

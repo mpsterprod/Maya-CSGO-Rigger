@@ -14,7 +14,7 @@ plugin = imp.load_source('csgo_tool_byMP_release', os.environ['MAYA_LOCATION'] +
 
 
 def Plugin_start():
-	print 'plug init!'
+	print('plug init!')
 	#import MP_Animator_Helper as ret
 	#ruh = type
 	bruh = plugin.MainWindow()
@@ -94,7 +94,7 @@ def shelf_create():
 
 # CREATE TOOL
 def Install_Tool():
-	print 'privet blin'
+	print('privet blin')
 	# check files
 	mass_f = [
 
