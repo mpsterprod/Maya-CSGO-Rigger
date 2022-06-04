@@ -21,7 +21,7 @@ import maya.OpenMaya as om
 ####### GLOBAL VARIABLES
 #####################################################################
 
-PLUGINS_DIRECORY = os.environ['MAYA_LOCATION'] + "/bin/plug-ins/"    #C:/Program Files/Autodesk/Maya2018 + /bin/plug-ins
+PLUGINS_DIRECORY = os.environ['MAYA_LOCATION'] + "/bin/plug-ins/"	#C:/Program Files/Autodesk/Maya2018 + /bin/plug-ins
 
 # all tools 
 
@@ -182,8 +182,8 @@ def shelf_create():
 
 
 def Install_plug():
-	print 'install plugins...'
-	# add to init_tools 
+	print('install plugins...')
+	# add to init_tools
 	obj = os.listdir(PLUGINS_DIRECORY+'/')
 	init_fold = False
 	for fld in os.listdir(PLUGINS_DIRECORY+'/'):
@@ -199,7 +199,7 @@ def Install_plug():
 		init_f = ''
 		if not os.path.isdir(PLUGINS_DIRECORY+'/MP_Tools/'+tools):
 			continue
-		print 'TOOL folder = '+ tools
+		print(('TOOL folder = '+ tools))
 		istall_d = False
 		for plug_files in os.listdir(PLUGINS_DIRECORY+'/MP_Tools/'+tools+'/'):
 			if plug_files == "install_files.txt":
@@ -247,7 +247,7 @@ def Install_plug():
 				continue
 		if string_i =='':
 			continue
-		#print ' AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+		#print(' AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
 		pfi = imp.load_source('MP_Tools.'+tools+'.'+string_i[:len(string_i)-3], PLUGINS_DIRECORY+'/MP_Tools/'+tools+'/'+string_i)
 		pfi.Install_Tool()
 		del file_string
@@ -257,7 +257,7 @@ def Install_plug():
 	return CSGO
 
 '''
-		print tools
+		print(tools
 		for plug_files in os.listdir(PLUGINS_DIRECORY+'/MP_Tools/'+tools+'/'):
 			# check plugins
 			if plug_files == "install_files.txt":
@@ -266,14 +266,14 @@ def Install_plug():
 				if inst_f is None or inst_f == []:
 					break
 				else:
-					print 'da'
+					print('da'
 
 
 					file_string = []
 					for x in inst_f:
 						file_string.append(x)
 					inst_f.close()
-					print 'fefs = '+str(file_string)
+					print('fefs = '+str(file_string)
 
 
 
@@ -284,20 +284,20 @@ def Install_plug():
 					for fil in file_string:
 						# check in folder
 						for check in os.listdir(PLUGINS_DIRECORY+'/MP_Tools/'+tools+'/'):
-							#print check
+							#print(check
 							if fil[0]!='/':
 								continue
 							else:
 								if fil.replace('*','')==check.replace('*',''):
 									lines.append(fil)
-					print lines
+					print(lines
 					if lines==[]:
 						break
-					print ' AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+					print(' AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
 					if len(lines)!=len(file_string):
 						break
 					# istall file name
-					print ' AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+					print(' AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
 					# open root and install plugin
 					string_i = ''
 					for str_f in file_string:
@@ -306,14 +306,14 @@ def Install_plug():
 							break
 					if string_i =='':
 						break
-					#print ' AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+					#print(' AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
 
 					pfi = imp.load_source('MP_Tools.'+tools+'.'+string_i, PLUGINS_DIRECORY+'/MP_Tools/'+tools+'/'+string_i+'.py')
 					pfi.Install_Tool()
 					del file_string, lines
 '''
 def About():
-	#print ' hahahhahah'
+	#print(' hahahhahah'
 	mc.confirmDialog(
 		message="Custom Tools to work in Maya \n\n -Made by MP mpsterprod \n -Version 2.0.0",
 		button=['OK'],
@@ -323,12 +323,12 @@ def About():
 def CreateMyShelf():
 	# check folder
 	# check prefs
-	path_script_doc = os.environ['MAYA_APP_DIR'] + '/' + mc.about(version=1)  #C:/Users/userName/Documents/maya   \2018\scripts\CSGOtool
+	path_script_doc = os.environ['MAYA_APP_DIR'] + '/' + mc.about(version=1)  #C:/Users/userName/Documents/maya	\2018\scripts\CSGOtool
 
 	# check CSGO shelf 
 	shelves_mel = path_script_doc + '/prefs/shelves/'
 
-	mel_fls = list(filter(lambda x: x.endswith('.mel'), os.listdir(shelves_mel)))
+	mel_fls = list([x for x in os.listdir(shelves_mel) if x.endswith('.mel')])
 
 	CSGO_SHELF = False
 
@@ -357,15 +357,15 @@ def CreateMyShelf():
 		elif dialog == "Update":
 			# add motifications
 			# check new tools 				DONT WORK
-			return #                    
+			return #					
 		elif dialog == "All Update":
 			# create new all Shelf
 			New_Shelfs = True
 		
-	# get plugin
+			# get plugin
 
 
-	return	
+			return	
 
 	# create Shelf and CSGO button
 	if New_Shelfs:
@@ -393,13 +393,13 @@ def Create_Plugin_Menu():
 
 	# Version 0.02{
 		# TOOLS:
-			#                 CSGO models Rigger
+			#				 CSGO models Rigger
 
-			#                 mdl Viewer (soon)
+			#				 mdl Viewer (soon)
 
-			#                 Cod Weapon Builder
+			#				 Cod Weapon Builder
 
-			#                 Maya Ascii student fixer
+			#				 Maya Ascii student fixer
 	#}
 
 	# CREATE CSGO RIGGER 
@@ -411,8 +411,8 @@ def Create_Plugin_Menu():
 	#rigger_cs = open(sctr,"r")
 	#for code in rigger_cs:
 	#	STRING_csgo_rigger = STRING_csgo_rigger + code
-	#print STRING_csgo_rigger
-	
+	#print(STRING_csgo_rigger
+
 
 	def csgo_rigger_call(script_python=str):
 		mel.eval(
@@ -426,7 +426,6 @@ def Create_Plugin_Menu():
 		
 	# Install Menu
 	for tll in init_tools:
-		break
 		if tll == 'CSGOTool_v002':
 			# check base
 			plugin_f = os.listdir(PLUGINS_DIRECORY + 'MP_Tools/CSGOTool_v002/')
@@ -448,13 +447,13 @@ def Create_Plugin_Menu():
 	'''
 	mc.menuItem(
 		label="MDL Viewer (maybe soon)",
-		command="print 'mdl viewer'",
+		command="print('mdl viewer')",
 		annotation="fefwef"
 		)
 
 	mc.menuItem(
 		label="Maya ASCII Fixer (maybe soon)",
-		command="print 'fix maybe Ascii files'",
+		command="print('fix maybe Ascii files')",
 		annotation="fefwef"
 		)
 
@@ -502,22 +501,20 @@ def Create_Plugin_Menu():
 # init plug
 
 def initializePlugin(m_object):
-    """Register the plugin"""
-    m_plugin = OpenMayaMPx.MFnPlugin(m_object, "MP_Plugins", "2.0", "Any")
-    try:
-       print('est')
-    except RuntimeError:
-       print('nety hahaha')
-    Create_Plugin_Menu()
+	"""Register the plugin"""
+	m_plugin = OpenMayaMPx.MFnPlugin(m_object, "MP_Plugins", "2.0", "Any")
+	try:
+		print('est')
+	except RuntimeError:
+		print('nety hahaha')
+	Create_Plugin_Menu()
 
 def uninitializePlugin(m_object):
-    """Unregister the plugin"""
-    m_plugin = OpenMayaMPx.MFnPlugin(m_object)
-    try:
-        print('est')
-    except RuntimeError:
-    	print('nety hahaha')
-
-    if mc.control("MPsterprodTools", exists=True):
-        mc.deleteUI("MPsterprodTools", menu=True)
-        
+	"""Unregister the plugin"""
+	m_plugin = OpenMayaMPx.MFnPlugin(m_object)
+	try:
+		print('est')
+	except RuntimeError:
+		print('nety hahaha')
+	if mc.control("MPsterprodTools", exists=True):
+		mc.deleteUI("MPsterprodTools", menu=True)
