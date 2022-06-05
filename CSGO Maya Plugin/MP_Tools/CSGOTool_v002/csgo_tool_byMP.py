@@ -55,7 +55,7 @@ Pathversion = os.path.abspath(os.curdir)
 arrversion = Pathversion.replace('\\', ' ').split()
 version = str(arrversion[4]).replace('Maya','')   #version maya 
 #print(version)
-path_script = os.environ['MAYA_APP_DIR']    #C:/Users/userName/Documents/maya   \2018\scripts\CSGOtool
+path_script = os.environ['MAYA_APP_DIR']	#C:/Users/userName/Documents/maya   \2018\scripts\CSGOtool
 #print(path_script)
 del Pathversion
 
@@ -68,7 +68,7 @@ SCRIPT_DIRECTORY = path_script + '/' + version + '/scripts/CSGOTool_v002'
 RIGS_DIR = SCRIPT_DIRECTORY + '/Your Rigs' + '/'
 
 ALL_FILES_In_RIGS_DIR = os.listdir(RIGS_DIR)
-RIGS = list(filter(lambda x: x.endswith('.mb'), ALL_FILES_In_RIGS_DIR))
+RIGS = list([x for x in ALL_FILES_In_RIGS_DIR if x.endswith('.mb')])
 GUI_FOLDER = SCRIPT_DIRECTORY + '/gui images/'
 del ALL_FILES_In_RIGS_DIR
 '''
@@ -134,7 +134,7 @@ red_button_for_list_icon = [
 ]
 
 def hello():
-	print 'privet blin'
+	print('privet blin')
 
 
 image = "C:/editing/python/REALISER/mainwdwdwdwdw.jpg"
@@ -144,7 +144,7 @@ image = "C:/editing/python/REALISER/mainwdwdwdwdw.jpg"
 
 def maya_main_window():
 	main_window_ptr = omui.MQtUtil.mainWindow()
-	return wrapInstance(long(main_window_ptr), QtWidgets.QWidget)
+	return wrapInstance(int(main_window_ptr), QtWidgets.QWidget)
 
 #interface global 
 class MainWindow(QtWidgets.QDialog):
@@ -203,12 +203,12 @@ class MainWindow(QtWidgets.QDialog):
 		self.LIST_POV_OUT = []
 
 		#self.flags = QtCore.Qt.WindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint)
-        #self.setWindowFlags(self.flags)
+		#self.setWindowFlags(self.flags)
 
 		# WEAPONS
-		self.WEAPONS_PATH_FBX = ''    # path to fbx folder
-		self.WEAPON_PATH_SAVE = ''    # path to save rigs
-		self.check_path_Weapons = False    # check path
+		self.WEAPONS_PATH_FBX = ''	# path to fbx folder
+		self.WEAPON_PATH_SAVE = ''	# path to save rigs
+		self.check_path_Weapons = False	# check path
 		self.check_for_good_generate_weapons = False
 		self.check_path_to_save_weapons = False
 		self.check_weapon_mode_list_or_all_inits = False
@@ -255,7 +255,7 @@ class MainWindow(QtWidgets.QDialog):
 		test = self.ui.TESTLABEL
 		test.setPixmap(image)
 		
-        
+		
 	def init_tab_buttons(self):
 
 		character_mode_bt = self.ui.character_mode
@@ -475,11 +475,11 @@ class MainWindow(QtWidgets.QDialog):
 		label_fbx_path_check = self.ui.fbx_path_user_label_character
 
 		bad = 'Bad Path, no .fbx files :('
-		good = '       Good FBX path!'
+		good = '	   Good FBX path!'
 		bad_color = 'color: rgb(255, 0, 0);font: 75 12pt "Unispace";'
 		good_color = 'color: rgb(0, 255, 38);font: 75 12pt "Unispace";'
 
-		no_fbx = '       Add fbx!'
+		no_fbx = '	   Add fbx!'
 
 
 		if good_or_no == 0:
@@ -649,13 +649,13 @@ class MainWindow(QtWidgets.QDialog):
 		info_to_user = self.ui.info_label
 
 		
-		print('hz = '+str(self.BAD_FBX_PATH))
+		print(('hz = '+str(self.BAD_FBX_PATH)))
 		if self.BAD_FBX_PATH == 1:
 			print('----------------------------------------')
 			print('------Bad path, no fbx files :(-------')
 			print('----------------------------------------')
 			info_to_user.show()
-			info_to_user.setText("      Add FBX Folder")
+			info_to_user.setText("	  Add FBX Folder")
 			info_to_user.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 			return
 	
@@ -665,7 +665,7 @@ class MainWindow(QtWidgets.QDialog):
 		if self.Check_For == 1:
 			if self.FBX_CHARACTER_FOLDER != '':
 				if self.SAVE_CHARACTER_FOLDER != '':
-					print(self.SAVE_CHARACTER_FOLDER)
+					print((self.SAVE_CHARACTER_FOLDER))
 					self.GOOD_GENERATE_OR_BAD(good_or_no = 1)
 
 
@@ -688,11 +688,11 @@ class MainWindow(QtWidgets.QDialog):
 
 		if self.FBX_CHARACTER_FOLDER == '':
 			info_to_user.show()
-			info_to_user.setText("      Add FBX Folder")
+			info_to_user.setText("	  Add FBX Folder")
 			info_to_user.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 		else:
 			info_to_user.show()
-			info_to_user.setText("        Add model")
+			info_to_user.setText("		Add model")
 			info_to_user.setStyleSheet('font: 75 12pt "Unispace";color: rgb(255, 255, 255);')
 
 		if len(self.LIST_CHARACTERS_PATHS) >= 1:
@@ -711,40 +711,40 @@ class MainWindow(QtWidgets.QDialog):
 		print('mode active or last = ' + str(self.MODE))
 		'''
 		print('------------------------------------------')
-		print('----------      UPDATE DATA     ----------')
+		print('----------	  UPDATE DATA	 ----------')
 		print('------------------------------------------')
 
 		if self.Check_For == 0 :
 			#for list
 			print('for model in list')
-			print('folder import = ' + self.FBX_CHARACTER_FOLDER)
-			print('folder export = ' + self.SAVE_CHARACTER_FOLDER)
-			print('mode export = ' + str(self.Check_For))
+			print(('folder import = ' + self.FBX_CHARACTER_FOLDER))
+			print(('folder export = ' + self.SAVE_CHARACTER_FOLDER))
+			print(('mode export = ' + str(self.Check_For)))
 			if self.LIST_CHARACTERS_PATHS != []:
 				self.GOOD_GENERATE_OR_BAD(good_or_no = 1)
 				for x in self.LIST_CHARACTERS_PATHS:
-					print("for import " + x)
+					print(("for import " + x))
 			else:
 				print('----add model pls ----')
 				self.GOOD_GENERATE_OR_BAD(good_or_no = 0)
-			print('rig use = ' + self.RIG_USE)
+			print(('rig use = ' + self.RIG_USE))
 		elif self.Check_For == 1:
 			
 			#for all
 			print('for all model')
-			print('folder import = ' + self.FBX_CHARACTER_FOLDER)
-			print('folder export = ' + self.SAVE_CHARACTER_FOLDER)
-			print('mode export = ' + str(self.Check_For))
+			print(('folder import = ' + self.FBX_CHARACTER_FOLDER))
+			print(('folder export = ' + self.SAVE_CHARACTER_FOLDER))
+			print(('mode export = ' + str(self.Check_For)))
 			if self.LIST_ALL_CHARACTERS_IN_FORLDER != []:
 				if self.FBX_CHARACTER_FOLDER != '':
 					if self.SAVE_CHARACTER_FOLDER != '':
 						self.GOOD_GENERATE_OR_BAD(good_or_no = 1)
 						for path_fbx in self.LIST_ALL_CHARACTERS_IN_FORLDER:
-								print("for import " + path_fbx)
+								print(("for import " + path_fbx))
 			else:
 				self.GOOD_GENERATE_OR_BAD(good_or_no = 0)
 				print('---- no models in folder! ----')
-			print('rig use = ' + self.RIG_USE)
+			print(('rig use = ' + self.RIG_USE))
 		print('==========================================')
 	
 	def character_mode(self):
@@ -1006,8 +1006,8 @@ class MainWindow(QtWidgets.QDialog):
 		if ALL_PATHS == []:
 			return
 
-		#ALL_PATHS = []       # self.LIST_CHARACTERS_PATHS
-		#folder_fbx = ''      # self.FBX_CHARACTER_FOLDER
+		#ALL_PATHS = []	   # self.LIST_CHARACTERS_PATHS
+		#folder_fbx = ''	  # self.FBX_CHARACTER_FOLDER
 
 
 		#if self.MODE == 0:
@@ -1130,7 +1130,7 @@ class MainWindow(QtWidgets.QDialog):
 				
 				#create for all - mode
 				check = os.listdir(self.FBX_CHARACTER_FOLDER)
-				name_fbx = list(filter(lambda x: x.endswith('ModelFromBlender.fbx'), check))
+				name_fbx = list([x for x in check if x.endswith('ModelFromBlender.fbx')])
 
 				if name_fbx == [] or name_fbx == None:
 					print('Bad path, no fbx files :(')
@@ -1183,7 +1183,7 @@ class MainWindow(QtWidgets.QDialog):
 					self.ui.lineEdit_character_fbx.setText(self.FBX_CHARACTER_FOLDER)
 					#create for all - mode
 					check = os.listdir(self.FBX_CHARACTER_FOLDER)
-					name_fbx = list(filter(lambda x: x.endswith('ModelFromBlender.fbx'), check))
+					name_fbx = list([x for x in check if x.endswith('ModelFromBlender.fbx')])
 					if name_fbx == [] or name_fbx == None:
 						print('Bad path, no fbx files :(')
 						self.BAD_FBX_PATH_OR_GOOD(good_or_no = 0)
@@ -1248,7 +1248,7 @@ class MainWindow(QtWidgets.QDialog):
 				self.ui.lineEdit_character_fbx.setText(self.WEAPONS_PATH_FBX)
 				#create for all - mode
 				check = os.listdir(self.WEAPONS_PATH_FBX)
-				name_fbx = list(filter(lambda x: x.endswith('ModelFromBlender.fbx'), check))
+				name_fbx = list([x for x in check if x.endswith('ModelFromBlender.fbx')])
 				if name_fbx == [] or name_fbx == None:
 					print('Bad path, no fbx files :(')
 					self.BAD_FBX_PATH_OR_GOOD_WEAPONS(good_or_no = 0)
@@ -1269,7 +1269,7 @@ class MainWindow(QtWidgets.QDialog):
 			self.update_mode()
 
 
-		print(self.WEAPONS_PATH_FBX)
+		print((self.WEAPONS_PATH_FBX))
 
 
 	def weapons_path_save_rigs(self):
@@ -1327,7 +1327,7 @@ class MainWindow(QtWidgets.QDialog):
 
 			if self.Check_For == 0:
 				#for list
-				print('mode generate = '+str(mode_generate))
+				print(('mode generate = '+str(mode_generate)))
 
 				#open dialog for start
 				print('dadadada')
@@ -1338,7 +1338,7 @@ class MainWindow(QtWidgets.QDialog):
 								stg = Generate_Character_Start(self,mode = 0, fbx = self.FBX_CHARACTER_FOLDER, save = self.SAVE_CHARACTER_FOLDER, file = self.RIG_USE, list_model = self.LIST_CHARACTERS_PATHS)
 								stg.exec_()
 			elif self.Check_For == 1:
-				print('mode generate = '+str(mode_generate))
+				print(('mode generate = '+str(mode_generate)))
 				#for all 
 				#open dialog for start
 				print('allll')
@@ -1520,7 +1520,7 @@ class Edit_Fbx_Path(QtWidgets.QDialog):
 		pass
 
 	def edit_path(self):
-		print(self.old_path)
+		print((self.old_path))
 		pass
 
 
@@ -1740,7 +1740,7 @@ class Generate_Character_Start(QtWidgets.QDialog):
 			#local
 			# check create root or not
 			self.CREATE_ROOT = self.ui.Create_Root_Check.CheckState()
-			print self.CREATE_ROOT
+			print((self.CREATE_ROOT))
 			return
 			
 			create_generator = Customizer(self)
@@ -1887,356 +1887,356 @@ class Customizer(object):
 
 		if mode_use == 0:
 			#start for character
-		    print(list_paths_fbx_models)
-
-		    name_maya_export_file = '.mb'
-
-		    for x in range(0,len(list_paths_fbx_models)):
-
-		    	import_fbx = list_paths_fbx_models[x]
-		    	name_file = list_paths_fbx_models[x].replace(fbx_path+'/','')
-		    	print(name_file)
-		    	#create new scene 
-        		mel.eval('file -f -new')
-
-        		#import FBX from bledner 
-		        mc.file(import_fbx, i=True,ignoreVersion = True, mergeNamespacesOnClash=True, namespace=':')
-
-		        #flip all joint ortation
+			print(list_paths_fbx_models)
+
+			name_maya_export_file = '.mb'
+
+			for x in range(0,len(list_paths_fbx_models)):
+
+				import_fbx = list_paths_fbx_models[x]
+				name_file = list_paths_fbx_models[x].replace(fbx_path+'/','')
+				print(name_file)
+				#create new scene 
+				mel.eval('file -f -new')
+
+				#import FBX from bledner 
+				mc.file(import_fbx, i=True,ignoreVersion = True, mergeNamespacesOnClash=True, namespace=':')
+
+				#flip all joint ortation
 
-		        #auto
-		        #clear all joints in scene
-		        selectionsJoints = mc.ls(type = 'joint')
+				#auto
+				#clear all joints in scene
+				selectionsJoints = mc.ls(type = 'joint')
 
-		        for j in range(0,len(selectionsJoints)):
-			        #get rotarion joint
-			        attRX = mc.getAttr(selectionsJoints[j] + '.rotateX')
-			        attRY = mc.getAttr(selectionsJoints[j] + '.rotateY')
-			        attRZ = mc.getAttr(selectionsJoints[j] + '.rotateZ')
-			        #set to joint orient
-			        mc.setAttr(selectionsJoints[j] + '.joint Orient X', attRX)
-			        mc.setAttr(selectionsJoints[j] + '.joint Orient Y', attRY)
-			        mc.setAttr(selectionsJoints[j] + '.joint Orient Z', attRZ)
-			        #clear rotation joints
-			        mc.setAttr(selectionsJoints[j] + '.rotateX', 0)
-			        mc.setAttr(selectionsJoints[j] + '.rotateY', 0)
-			        mc.setAttr(selectionsJoints[j] + '.rotateZ', 0)
+				for j in range(0,len(selectionsJoints)):
+					#get rotarion joint
+					attRX = mc.getAttr(selectionsJoints[j] + '.rotateX')
+					attRY = mc.getAttr(selectionsJoints[j] + '.rotateY')
+					attRZ = mc.getAttr(selectionsJoints[j] + '.rotateZ')
+					#set to joint orient
+					mc.setAttr(selectionsJoints[j] + '.joint Orient X', attRX)
+					mc.setAttr(selectionsJoints[j] + '.joint Orient Y', attRY)
+					mc.setAttr(selectionsJoints[j] + '.joint Orient Z', attRZ)
+					#clear rotation joints
+					mc.setAttr(selectionsJoints[j] + '.rotateX', 0)
+					mc.setAttr(selectionsJoints[j] + '.rotateY', 0)
+					mc.setAttr(selectionsJoints[j] + '.rotateZ', 0)
 
 
-			    #unparent bones
-		        loc_object_delete = mc.ls(type = 'locator')
+				#unparent bones
+				loc_object_delete = mc.ls(type = 'locator')
 
-		        bone_unparent_pelvis = loc_object_delete[0].replace('Shape', '') + '|pelvis'
-		        bone_unparent_cam = loc_object_delete[0].replace('Shape', '') + '|cam_driver'
-		        bone_unparent_root = loc_object_delete[0].replace('Shape', '') + '|lean_root'
+				bone_unparent_pelvis = loc_object_delete[0].replace('Shape', '') + '|pelvis'
+				bone_unparent_cam = loc_object_delete[0].replace('Shape', '') + '|cam_driver'
+				bone_unparent_root = loc_object_delete[0].replace('Shape', '') + '|lean_root'
 
-		        objects_unParent_skeleton = [bone_unparent_pelvis, bone_unparent_cam, bone_unparent_root]
-		        for unparent in objects_unParent_skeleton:
-		            mc.parent( unparent, world=True)
+				objects_unParent_skeleton = [bone_unparent_pelvis, bone_unparent_cam, bone_unparent_root]
+				for unparent in objects_unParent_skeleton:
+					mc.parent( unparent, world=True)
 
-		        #get one locator from fbx file
-		        for locator_delete in loc_object_delete:   
-		            mc.delete(locator_delete.replace('Shape', ''))
+				#get one locator from fbx file
+				for locator_delete in loc_object_delete:   
+					mc.delete(locator_delete.replace('Shape', ''))
 
-		        #get name mesh
-		        my_mesh_list = mc.ls(type = 'mesh', s = 0)
-		        print(my_mesh_list)
-		        object_mesh = []
-		        for x in my_mesh_list:
-		            if (x.find('ShapeOrig') != -1):
-		                ab = x.replace('ShapeOrig', '')
-		                object_mesh.append(ab)
-		        #print(object_mesh) #for debug
+				#get name mesh
+				my_mesh_list = mc.ls(type = 'mesh', s = 0)
+				print(my_mesh_list)
+				object_mesh = []
+				for x in my_mesh_list:
+					if (x.find('ShapeOrig') != -1):
+						ab = x.replace('ShapeOrig', '')
+						object_mesh.append(ab)
+				#print(object_mesh) #for debug
 
-		        #import file rig
+				#import file rig
 
-		        cmds.file(rigs_path + file_rig_name,ignoreVersion = True, i=True, mergeNamespacesOnClash=True, namespace=':')
+				cmds.file(rigs_path + file_rig_name,ignoreVersion = True, i=True, mergeNamespacesOnClash=True, namespace=':')
 
-		        #parent content to rigs 
-		        rig_path_mesh_grp = 'csgo_character|mesh'
-		        rig_path_skeleton_grp = 'csgo_character|your_skeleton'
-		        #parent mesh 
-		        for mesh in object_mesh:
-		            mc.parent(mesh, rig_path_mesh_grp)
-		        #parent skeleton
-		        skeleton_data_referense = ['pelvis','cam_driver','lean_root'] 
-		        for skelet in skeleton_data_referense:
-		            mc.parent(skelet, rig_path_skeleton_grp)
+				#parent content to rigs 
+				rig_path_mesh_grp = 'csgo_character|mesh'
+				rig_path_skeleton_grp = 'csgo_character|your_skeleton'
+				#parent mesh 
+				for mesh in object_mesh:
+					mc.parent(mesh, rig_path_mesh_grp)
+				#parent skeleton
+				skeleton_data_referense = ['pelvis','cam_driver','lean_root'] 
+				for skelet in skeleton_data_referense:
+					mc.parent(skelet, rig_path_skeleton_grp)
 
 
-		        #get path to objects
+				#get path to objects
 
 
 
-		        #rig data
-		        #arm and spin neck
-		        LIST_RIG_DATA = [           #parent ad=ll rig data
+				#rig data
+				#arm and spin neck
+				LIST_RIG_DATA = [		   #parent ad=ll rig data
 
-		            'csgo_character|setup|spine_rig1|ac_FK_hip_grp|ac_hip',
-		            'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1',
-		            'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2',
-		            'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest',
-		      
-		            'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest|ac_neck_1_grp|ac_neck_2',
-		            'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest|ac_neck_1_grp|ac_neck_2|ac_head_0_grp|ac_head_0',
-		     
-		            'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest|clavicle_rig|jt_drv_clavicle_L',
-		            'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest|clavicle_rig|jt_drv_clavicle_R',
-		       
-		            'csgo_character|setup|arm_rig_L|ac_DRV_arm_jt_L_grp|jt_drv_arm_upper_L',
-		            'csgo_character|setup|arm_rig_L|ac_DRV_arm_jt_L_grp|jt_drv_arm_upper_L|jt_drv_arm_lower_L',
-		            'csgo_character|setup|arm_rig_L|ac_DRV_arm_jt_L_grp|jt_drv_arm_upper_L|jt_drv_arm_lower_L|jt_drv_hand_L',
-		     
-		            'csgo_character|setup|arm_rig_R|ac_DRV_arm_jt_R|jt_drv_arm_upper_R',
-		            'csgo_character|setup|arm_rig_R|ac_DRV_arm_jt_R|jt_drv_arm_upper_R|jt_drv_arm_lower_R',
-		            'csgo_character|setup|arm_rig_R|ac_DRV_arm_jt_R|jt_drv_arm_upper_R|jt_drv_arm_lower_R|jt_drv_hand_R',
+					'csgo_character|setup|spine_rig1|ac_FK_hip_grp|ac_hip',
+					'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1',
+					'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2',
+					'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest',
+			  
+					'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest|ac_neck_1_grp|ac_neck_2',
+					'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest|ac_neck_1_grp|ac_neck_2|ac_head_0_grp|ac_head_0',
+			 
+					'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest|clavicle_rig|jt_drv_clavicle_L',
+					'csgo_character|setup|spine_rig1|ac_FK_spine_1_grp|ac_FK_spine_1|ac_FK_spine_2_grp|ac_FK_spine_2|ac_FK_spine_3_grp|ac_chest|clavicle_rig|jt_drv_clavicle_R',
+			   
+					'csgo_character|setup|arm_rig_L|ac_DRV_arm_jt_L_grp|jt_drv_arm_upper_L',
+					'csgo_character|setup|arm_rig_L|ac_DRV_arm_jt_L_grp|jt_drv_arm_upper_L|jt_drv_arm_lower_L',
+					'csgo_character|setup|arm_rig_L|ac_DRV_arm_jt_L_grp|jt_drv_arm_upper_L|jt_drv_arm_lower_L|jt_drv_hand_L',
+			 
+					'csgo_character|setup|arm_rig_R|ac_DRV_arm_jt_R|jt_drv_arm_upper_R',
+					'csgo_character|setup|arm_rig_R|ac_DRV_arm_jt_R|jt_drv_arm_upper_R|jt_drv_arm_lower_R',
+					'csgo_character|setup|arm_rig_R|ac_DRV_arm_jt_R|jt_drv_arm_upper_R|jt_drv_arm_lower_R|jt_drv_hand_R',
 
-		        ]
+				]
 
 
 
-		        LEFT_FINGERS_RIG = [
+				LEFT_FINGERS_RIG = [
 
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_ring_meta_L_grp|ac_finger_ring_meta_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_ring_meta_L_grp|ac_finger_ring_meta_L|ac_drv_finger_ring_0_L_grp|ac_drv_finger_ring_0_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_ring_meta_L_grp|ac_finger_ring_meta_L|ac_drv_finger_ring_0_L_grp|ac_drv_finger_ring_0_L|ac_drv_finger_ring_1_L_grp|ac_drv_finger_ring_1_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_ring_meta_L_grp|ac_finger_ring_meta_L|ac_drv_finger_ring_0_L_grp|ac_drv_finger_ring_0_L|ac_drv_finger_ring_1_L_grp|ac_drv_finger_ring_1_L|ac_drv_finger_ring_2_L_grp|ac_drv_finger_ring_2_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_ring_meta_L_grp|ac_finger_ring_meta_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_ring_meta_L_grp|ac_finger_ring_meta_L|ac_drv_finger_ring_0_L_grp|ac_drv_finger_ring_0_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_ring_meta_L_grp|ac_finger_ring_meta_L|ac_drv_finger_ring_0_L_grp|ac_drv_finger_ring_0_L|ac_drv_finger_ring_1_L_grp|ac_drv_finger_ring_1_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_ring_meta_L_grp|ac_finger_ring_meta_L|ac_drv_finger_ring_0_L_grp|ac_drv_finger_ring_0_L|ac_drv_finger_ring_1_L_grp|ac_drv_finger_ring_1_L|ac_drv_finger_ring_2_L_grp|ac_drv_finger_ring_2_L.rotate',
 
 
 
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_drv_finger_thumb_0_L_grp|ac_drv_finger_thumb_0_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_drv_finger_thumb_0_L_grp|ac_drv_finger_thumb_0_L|ac_drv_finger_thumb_1_L_grp|ac_drv_finger_thumb_1_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_drv_finger_thumb_0_L_grp|ac_drv_finger_thumb_0_L|ac_drv_finger_thumb_1_L_grp|ac_drv_finger_thumb_1_L|ac_drv_finger_thumb_2_L_grp|ac_drv_finger_thumb_2_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_drv_finger_thumb_0_L_grp|ac_drv_finger_thumb_0_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_drv_finger_thumb_0_L_grp|ac_drv_finger_thumb_0_L|ac_drv_finger_thumb_1_L_grp|ac_drv_finger_thumb_1_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_drv_finger_thumb_0_L_grp|ac_drv_finger_thumb_0_L|ac_drv_finger_thumb_1_L_grp|ac_drv_finger_thumb_1_L|ac_drv_finger_thumb_2_L_grp|ac_drv_finger_thumb_2_L.rotate',
 
 
 
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_index_meta_L_grp|ac_finger_index_meta_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_index_meta_L_grp|ac_finger_index_meta_L|ac_drv_finger_index_0_L_grp|ac_drv_finger_index_0_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_index_meta_L_grp|ac_finger_index_meta_L|ac_drv_finger_index_0_L_grp|ac_drv_finger_index_0_L|ac_drv_finger_index_1_L_grp|ac_drv_finger_index_1_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_index_meta_L_grp|ac_finger_index_meta_L|ac_drv_finger_index_0_L_grp|ac_drv_finger_index_0_L|ac_drv_finger_index_1_L_grp|ac_drv_finger_index_1_L|ac_drv_finger_index_2_L_grp|ac_drv_finger_index_2_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_index_meta_L_grp|ac_finger_index_meta_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_index_meta_L_grp|ac_finger_index_meta_L|ac_drv_finger_index_0_L_grp|ac_drv_finger_index_0_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_index_meta_L_grp|ac_finger_index_meta_L|ac_drv_finger_index_0_L_grp|ac_drv_finger_index_0_L|ac_drv_finger_index_1_L_grp|ac_drv_finger_index_1_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_index_meta_L_grp|ac_finger_index_meta_L|ac_drv_finger_index_0_L_grp|ac_drv_finger_index_0_L|ac_drv_finger_index_1_L_grp|ac_drv_finger_index_1_L|ac_drv_finger_index_2_L_grp|ac_drv_finger_index_2_L.rotate',
 
 
 
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_pinky_meta_L_grp|ac_finger_pinky_meta_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_pinky_meta_L_grp|ac_finger_pinky_meta_L|ac_drv_finger_pinky_0_L_grp|ac_drv_finger_pinky_0_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_pinky_meta_L_grp|ac_finger_pinky_meta_L|ac_drv_finger_pinky_0_L_grp|ac_drv_finger_pinky_0_L|ac_drv_finger_pinky_1_L_grp|ac_drv_finger_pinky_1_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_pinky_meta_L_grp|ac_finger_pinky_meta_L|ac_drv_finger_pinky_0_L_grp|ac_drv_finger_pinky_0_L|ac_drv_finger_pinky_1_L_grp|ac_drv_finger_pinky_1_L|ac_drv_finger_pinky_2_L_grp|ac_drv_finger_pinky_2_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_pinky_meta_L_grp|ac_finger_pinky_meta_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_pinky_meta_L_grp|ac_finger_pinky_meta_L|ac_drv_finger_pinky_0_L_grp|ac_drv_finger_pinky_0_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_pinky_meta_L_grp|ac_finger_pinky_meta_L|ac_drv_finger_pinky_0_L_grp|ac_drv_finger_pinky_0_L|ac_drv_finger_pinky_1_L_grp|ac_drv_finger_pinky_1_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_pinky_meta_L_grp|ac_finger_pinky_meta_L|ac_drv_finger_pinky_0_L_grp|ac_drv_finger_pinky_0_L|ac_drv_finger_pinky_1_L_grp|ac_drv_finger_pinky_1_L|ac_drv_finger_pinky_2_L_grp|ac_drv_finger_pinky_2_L.rotate',
 
 
 
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_middle_meta_L_grp|ac_finger_middle_meta_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_middle_meta_L_grp|ac_finger_middle_meta_L|ac_drv_finger_middle_0_L_grp|ac_drv_finger_middle_0_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_middle_meta_L_grp|ac_finger_middle_meta_L|ac_drv_finger_middle_0_L_grp|ac_drv_finger_middle_0_L|ac_drv_finger_middle_1_L_grp|ac_drv_finger_middle_1_L.rotate',
-		            'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_middle_meta_L_grp|ac_finger_middle_meta_L|ac_drv_finger_middle_0_L_grp|ac_drv_finger_middle_0_L|ac_drv_finger_middle_1_L_grp|ac_drv_finger_middle_1_L|ac_drv_finger_middle_2_L_grp|ac_drv_finger_middle_2_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_middle_meta_L_grp|ac_finger_middle_meta_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_middle_meta_L_grp|ac_finger_middle_meta_L|ac_drv_finger_middle_0_L_grp|ac_drv_finger_middle_0_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_middle_meta_L_grp|ac_finger_middle_meta_L|ac_drv_finger_middle_0_L_grp|ac_drv_finger_middle_0_L|ac_drv_finger_middle_1_L_grp|ac_drv_finger_middle_1_L.rotate',
+					'csgo_character|setup|arm_rig_L|Left_hand_rig|ac_drv_fingers_L_grp|ac_finger_middle_meta_L_grp|ac_finger_middle_meta_L|ac_drv_finger_middle_0_L_grp|ac_drv_finger_middle_0_L|ac_drv_finger_middle_1_L_grp|ac_drv_finger_middle_1_L|ac_drv_finger_middle_2_L_grp|ac_drv_finger_middle_2_L.rotate',
 
 
 
-		        ]
+				]
 
 
 
 
 
 
-		        #finger from rig
-		        RIGHT_FINGERS_RIG = [
+				#finger from rig
+				RIGHT_FINGERS_RIG = [
 
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_ring_meta_R_grp|ac_finger_ring_meta_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_ring_meta_R_grp|ac_finger_ring_meta_R|ac_drv_finger_ring_0_R_grp|ac_drv_finger_ring_0_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_ring_meta_R_grp|ac_finger_ring_meta_R|ac_drv_finger_ring_0_R_grp|ac_drv_finger_ring_0_R|ac_drv_finger_ring_1_R_grp|ac_drv_finger_ring_1_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_ring_meta_R_grp|ac_finger_ring_meta_R|ac_drv_finger_ring_0_R_grp|ac_drv_finger_ring_0_R|ac_drv_finger_ring_1_R_grp|ac_drv_finger_ring_1_R|ac_drv_finger_ring_2_R_grp|ac_drv_finger_ring_2_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_ring_meta_R_grp|ac_finger_ring_meta_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_ring_meta_R_grp|ac_finger_ring_meta_R|ac_drv_finger_ring_0_R_grp|ac_drv_finger_ring_0_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_ring_meta_R_grp|ac_finger_ring_meta_R|ac_drv_finger_ring_0_R_grp|ac_drv_finger_ring_0_R|ac_drv_finger_ring_1_R_grp|ac_drv_finger_ring_1_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_ring_meta_R_grp|ac_finger_ring_meta_R|ac_drv_finger_ring_0_R_grp|ac_drv_finger_ring_0_R|ac_drv_finger_ring_1_R_grp|ac_drv_finger_ring_1_R|ac_drv_finger_ring_2_R_grp|ac_drv_finger_ring_2_R.rotate',
 
 
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_drv_finger_thumb_0_R_grp|ac_drv_finger_thumb_0_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_drv_finger_thumb_0_R_grp|ac_drv_finger_thumb_0_R|ac_drv_finger_thumb_1_R_grp|ac_drv_finger_thumb_1_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_drv_finger_thumb_0_R_grp|ac_drv_finger_thumb_0_R|ac_drv_finger_thumb_1_R_grp|ac_drv_finger_thumb_1_R|ac_drv_finger_thumb_2_R_grp|ac_drv_finger_thumb_2_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_drv_finger_thumb_0_R_grp|ac_drv_finger_thumb_0_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_drv_finger_thumb_0_R_grp|ac_drv_finger_thumb_0_R|ac_drv_finger_thumb_1_R_grp|ac_drv_finger_thumb_1_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_drv_finger_thumb_0_R_grp|ac_drv_finger_thumb_0_R|ac_drv_finger_thumb_1_R_grp|ac_drv_finger_thumb_1_R|ac_drv_finger_thumb_2_R_grp|ac_drv_finger_thumb_2_R.rotate',
 
 
 
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_index_meta_R_grp|ac_finger_index_meta_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_index_meta_R_grp|ac_finger_index_meta_R|ac_drv_finger_index_0_R_grp|ac_drv_finger_index_0_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_index_meta_R_grp|ac_finger_index_meta_R|ac_drv_finger_index_0_R_grp|ac_drv_finger_index_0_R|ac_drv_finger_index_1_R_grp|ac_drv_finger_index_1_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_index_meta_R_grp|ac_finger_index_meta_R|ac_drv_finger_index_0_R_grp|ac_drv_finger_index_0_R|ac_drv_finger_index_1_R_grp|ac_drv_finger_index_1_R|ac_drv_finger_index_2_R_grp|ac_drv_finger_index_2_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_index_meta_R_grp|ac_finger_index_meta_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_index_meta_R_grp|ac_finger_index_meta_R|ac_drv_finger_index_0_R_grp|ac_drv_finger_index_0_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_index_meta_R_grp|ac_finger_index_meta_R|ac_drv_finger_index_0_R_grp|ac_drv_finger_index_0_R|ac_drv_finger_index_1_R_grp|ac_drv_finger_index_1_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_index_meta_R_grp|ac_finger_index_meta_R|ac_drv_finger_index_0_R_grp|ac_drv_finger_index_0_R|ac_drv_finger_index_1_R_grp|ac_drv_finger_index_1_R|ac_drv_finger_index_2_R_grp|ac_drv_finger_index_2_R.rotate',
 
 
 
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_pinky_meta_R_grp|ac_finger_pinky_meta_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_pinky_meta_R_grp|ac_finger_pinky_meta_R|ac_drv_finger_pinky_0_R_grp|ac_drv_finger_pinky_0_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_pinky_meta_R_grp|ac_finger_pinky_meta_R|ac_drv_finger_pinky_0_R_grp|ac_drv_finger_pinky_0_R|ac_drv_finger_pinky_1_R_grp|ac_drv_finger_pinky_1_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_pinky_meta_R_grp|ac_finger_pinky_meta_R|ac_drv_finger_pinky_0_R_grp|ac_drv_finger_pinky_0_R|ac_drv_finger_pinky_1_R_grp|ac_drv_finger_pinky_1_R|ac_drv_finger_pinky_2_R_grp|ac_drv_finger_pinky_2_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_pinky_meta_R_grp|ac_finger_pinky_meta_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_pinky_meta_R_grp|ac_finger_pinky_meta_R|ac_drv_finger_pinky_0_R_grp|ac_drv_finger_pinky_0_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_pinky_meta_R_grp|ac_finger_pinky_meta_R|ac_drv_finger_pinky_0_R_grp|ac_drv_finger_pinky_0_R|ac_drv_finger_pinky_1_R_grp|ac_drv_finger_pinky_1_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_pinky_meta_R_grp|ac_finger_pinky_meta_R|ac_drv_finger_pinky_0_R_grp|ac_drv_finger_pinky_0_R|ac_drv_finger_pinky_1_R_grp|ac_drv_finger_pinky_1_R|ac_drv_finger_pinky_2_R_grp|ac_drv_finger_pinky_2_R.rotate',
 
 
 
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_middle_meta_R_grp|ac_finger_middle_meta_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_middle_meta_R_grp|ac_finger_middle_meta_R|ac_drv_finger_middle_0_R_grp|ac_drv_finger_middle_0_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_middle_meta_R_grp|ac_finger_middle_meta_R|ac_drv_finger_middle_0_R_grp|ac_drv_finger_middle_0_R|ac_drv_finger_middle_1_R_grp|ac_drv_finger_middle_1_R.rotate',
-		            'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_middle_meta_R_grp|ac_finger_middle_meta_R|ac_drv_finger_middle_0_R_grp|ac_drv_finger_middle_0_R|ac_drv_finger_middle_1_R_grp|ac_drv_finger_middle_1_R|ac_drv_finger_middle_2_R_grp|ac_drv_finger_middle_2_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_middle_meta_R_grp|ac_finger_middle_meta_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_middle_meta_R_grp|ac_finger_middle_meta_R|ac_drv_finger_middle_0_R_grp|ac_drv_finger_middle_0_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_middle_meta_R_grp|ac_finger_middle_meta_R|ac_drv_finger_middle_0_R_grp|ac_drv_finger_middle_0_R|ac_drv_finger_middle_1_R_grp|ac_drv_finger_middle_1_R.rotate',
+					'csgo_character|setup|arm_rig_R|Right_hand_rig|ac_drv_fingers_R_grp|ac_finger_middle_meta_R_grp|ac_finger_middle_meta_R|ac_drv_finger_middle_0_R_grp|ac_drv_finger_middle_0_R|ac_drv_finger_middle_1_R_grp|ac_drv_finger_middle_1_R|ac_drv_finger_middle_2_R_grp|ac_drv_finger_middle_2_R.rotate',
 
-		        ]
+				]
 
 
-		        #LEGS ADD rig
+				#LEGS ADD rig
 
-		        LEG_RIG_DATA = [
-		            'csgo_character|setup|Left_leg_rig|result_drv_leg_upper_L1',
-		            'csgo_character|setup|Left_leg_rig|result_drv_leg_upper_L1|result_drv_leg_lower_L',
-		            'csgo_character|setup|Left_leg_rig|result_drv_leg_upper_L1|result_drv_leg_lower_L|result_drv_ankle_L',
-		            'csgo_character|setup|Left_leg_rig|result_drv_leg_upper_L1|result_drv_leg_lower_L|result_drv_ankle_L|result_drv_ball_L',
-		       
-		            'csgo_character|setup|Right_leg_rig|Result_leg_upper_R',
-		            'csgo_character|setup|Right_leg_rig|Result_leg_upper_R|Result_leg_lower_R',
-		            'csgo_character|setup|Right_leg_rig|Result_leg_upper_R|Result_leg_lower_R|Result_ankle_R',
-		            'csgo_character|setup|Right_leg_rig|Result_leg_upper_R|Result_leg_lower_R|Result_ankle_R|Result_ball_R',
+				LEG_RIG_DATA = [
+					'csgo_character|setup|Left_leg_rig|result_drv_leg_upper_L1',
+					'csgo_character|setup|Left_leg_rig|result_drv_leg_upper_L1|result_drv_leg_lower_L',
+					'csgo_character|setup|Left_leg_rig|result_drv_leg_upper_L1|result_drv_leg_lower_L|result_drv_ankle_L',
+					'csgo_character|setup|Left_leg_rig|result_drv_leg_upper_L1|result_drv_leg_lower_L|result_drv_ankle_L|result_drv_ball_L',
+			   
+					'csgo_character|setup|Right_leg_rig|Result_leg_upper_R',
+					'csgo_character|setup|Right_leg_rig|Result_leg_upper_R|Result_leg_lower_R',
+					'csgo_character|setup|Right_leg_rig|Result_leg_upper_R|Result_leg_lower_R|Result_ankle_R',
+					'csgo_character|setup|Right_leg_rig|Result_leg_upper_R|Result_leg_lower_R|Result_ankle_R|Result_ball_R',
 
-		        ]
+				]
 
 
 
-		        #twists manul skeleton
+				#twists manul skeleton
 
 
-		        LONG_TWIST_RIG = [
-		            #left arm 
-		            'csgo_character|setup|arm_rig_L|ac_arm_setup_L_grp|Left_arm_twists|jt_drv_arm_upper_L_nuLL|ac_arm_upper_L_TWIST_grp|ac_arm_upper_L_TWIST.rotate',
-		            'csgo_character|setup|arm_rig_L|ac_arm_setup_L_grp|Left_arm_twists|jt_drv_arm_upper_L_nuLL|ac_arm_upper_L_TWIST1_grp|ac_arm_upper_L_TWIST1.rotate',
+				LONG_TWIST_RIG = [
+					#left arm 
+					'csgo_character|setup|arm_rig_L|ac_arm_setup_L_grp|Left_arm_twists|jt_drv_arm_upper_L_nuLL|ac_arm_upper_L_TWIST_grp|ac_arm_upper_L_TWIST.rotate',
+					'csgo_character|setup|arm_rig_L|ac_arm_setup_L_grp|Left_arm_twists|jt_drv_arm_upper_L_nuLL|ac_arm_upper_L_TWIST1_grp|ac_arm_upper_L_TWIST1.rotate',
 
-		            'csgo_character|setup|arm_rig_L|ac_arm_setup_L_grp|Left_arm_twists|jt_drv_arm_upper_L_nuLL|jt_drv_arm_lower_L_null|ac_arm_lower_L_TWIST_grp|ac_arm_lower_L_TWIST.rotate',
-		            'csgo_character|setup|arm_rig_L|ac_arm_setup_L_grp|Left_arm_twists|jt_drv_arm_upper_L_nuLL|jt_drv_arm_lower_L_null|ac_arm_lower_L_TWIST1_grp|ac_arm_lower_L_TWIST1.rotate',
-		            #right arm
-		            'csgo_character|setup|arm_rig_R|ac_arm_setup_R_grp|Right_arm_twists|jt_drv_arm_upper_R_null|ac_arm_upper_R_TWIST_grp|ac_arm_upper_R_TWIST.rotate',
-		            'csgo_character|setup|arm_rig_R|ac_arm_setup_R_grp|Right_arm_twists|jt_drv_arm_upper_R_null|ac_arm_upper_R_TWIST1_grp|ac_arm_upper_R_TWIST1.rotate',
+					'csgo_character|setup|arm_rig_L|ac_arm_setup_L_grp|Left_arm_twists|jt_drv_arm_upper_L_nuLL|jt_drv_arm_lower_L_null|ac_arm_lower_L_TWIST_grp|ac_arm_lower_L_TWIST.rotate',
+					'csgo_character|setup|arm_rig_L|ac_arm_setup_L_grp|Left_arm_twists|jt_drv_arm_upper_L_nuLL|jt_drv_arm_lower_L_null|ac_arm_lower_L_TWIST1_grp|ac_arm_lower_L_TWIST1.rotate',
+					#right arm
+					'csgo_character|setup|arm_rig_R|ac_arm_setup_R_grp|Right_arm_twists|jt_drv_arm_upper_R_null|ac_arm_upper_R_TWIST_grp|ac_arm_upper_R_TWIST.rotate',
+					'csgo_character|setup|arm_rig_R|ac_arm_setup_R_grp|Right_arm_twists|jt_drv_arm_upper_R_null|ac_arm_upper_R_TWIST1_grp|ac_arm_upper_R_TWIST1.rotate',
 
-		            'csgo_character|setup|arm_rig_R|ac_arm_setup_R_grp|Right_arm_twists|jt_drv_arm_upper_R_null|jt_drv_arm_lower_R_null|ac_arm_lower_R_TWIST_grp|ac_arm_lower_R_TWIST.rotate',
-		            'csgo_character|setup|arm_rig_R|ac_arm_setup_R_grp|Right_arm_twists|jt_drv_arm_upper_R_null|jt_drv_arm_lower_R_null|ac_arm_lower_R_TWIST1_grp|ac_arm_lower_R_TWIST1.rotate',
+					'csgo_character|setup|arm_rig_R|ac_arm_setup_R_grp|Right_arm_twists|jt_drv_arm_upper_R_null|jt_drv_arm_lower_R_null|ac_arm_lower_R_TWIST_grp|ac_arm_lower_R_TWIST.rotate',
+					'csgo_character|setup|arm_rig_R|ac_arm_setup_R_grp|Right_arm_twists|jt_drv_arm_upper_R_null|jt_drv_arm_lower_R_null|ac_arm_lower_R_TWIST1_grp|ac_arm_lower_R_TWIST1.rotate',
 
-		            #left leg
-		            'csgo_character|setup|Left_leg_rig|Left_leg_TWISTS|leg_upper_L_TWIST_grp|leg_upper_L_TWIST.rotate',
-		            'csgo_character|setup|Left_leg_rig|Left_leg_TWISTS|leg_upper_L_TWIST1_grp|leg_upper_L_TWIST1.rotate',
-		            #right leg
-		            'csgo_character|setup|Right_leg_rig|Right_leg_TWISTS|leg_upper_R_TWIST_grp|leg_upper_R_TWIST.rotate',
-		            'csgo_character|setup|Right_leg_rig|Right_leg_TWISTS|leg_upper_R_TWIST1_grp|leg_upper_R_TWIST1.rotate',
+					#left leg
+					'csgo_character|setup|Left_leg_rig|Left_leg_TWISTS|leg_upper_L_TWIST_grp|leg_upper_L_TWIST.rotate',
+					'csgo_character|setup|Left_leg_rig|Left_leg_TWISTS|leg_upper_L_TWIST1_grp|leg_upper_L_TWIST1.rotate',
+					#right leg
+					'csgo_character|setup|Right_leg_rig|Right_leg_TWISTS|leg_upper_R_TWIST_grp|leg_upper_R_TWIST.rotate',
+					'csgo_character|setup|Right_leg_rig|Right_leg_TWISTS|leg_upper_R_TWIST1_grp|leg_upper_R_TWIST1.rotate',
 
 
 
 
-		        ]
+				]
 
 
 
 
 
 
-		        #skeleton dats #######################################################################
+				#skeleton dats #######################################################################
 
-		        #chld skeleton data
-		        LIST_SKELETON_CSGO_DATA = [       
+				#chld skeleton data
+				LIST_SKELETON_CSGO_DATA = [	   
 
-		            'csgo_character|your_skeleton|pelvis',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3',
+					'csgo_character|your_skeleton|pelvis',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3',
 
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|neck_0',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|neck_0|head_0',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|neck_0',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|neck_0|head_0',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R',
 
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L',
 
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R',
 
 
-		        ]
+				]
 
-		        #skeleton legs list
+				#skeleton legs list
 
-		        LIST_SKELETON_LEGS = [
+				LIST_SKELETON_LEGS = [
 
-		            'csgo_character|your_skeleton|pelvis|leg_upper_L',
-		            'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_lower_L',
-		            'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_lower_L|ankle_L',
-		            'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_lower_L|ankle_L|ball_L',
+					'csgo_character|your_skeleton|pelvis|leg_upper_L',
+					'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_lower_L',
+					'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_lower_L|ankle_L',
+					'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_lower_L|ankle_L|ball_L',
 
-		            'csgo_character|your_skeleton|pelvis|leg_upper_R',
-		            'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_lower_R',
-		            'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_lower_R|ankle_R',
-		            'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_lower_R|ankle_R|ball_R',
+					'csgo_character|your_skeleton|pelvis|leg_upper_R',
+					'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_lower_R',
+					'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_lower_R|ankle_R',
+					'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_lower_R|ankle_R|ball_R',
 
 
 
-		        ]
+				]
 
-		        #skeleton finger list
+				#skeleton finger list
 
 
-		        LEFT_FINGERS_SKELETON = [
+				LEFT_FINGERS_SKELETON = [
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_ring_meta_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_ring_meta_L|finger_ring_0_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_ring_meta_L|finger_ring_0_L|finger_ring_1_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_ring_meta_L|finger_ring_0_L|finger_ring_1_L|finger_ring_2_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_ring_meta_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_ring_meta_L|finger_ring_0_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_ring_meta_L|finger_ring_0_L|finger_ring_1_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_ring_meta_L|finger_ring_0_L|finger_ring_1_L|finger_ring_2_L.rotate',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_thumb_0_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_thumb_0_L|finger_thumb_1_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_thumb_0_L|finger_thumb_1_L|finger_thumb_2_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_thumb_0_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_thumb_0_L|finger_thumb_1_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_thumb_0_L|finger_thumb_1_L|finger_thumb_2_L.rotate',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_index_meta_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_index_meta_L|finger_index_0_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_index_meta_L|finger_index_0_L|finger_index_1_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_index_meta_L|finger_index_0_L|finger_index_1_L|finger_index_2_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_index_meta_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_index_meta_L|finger_index_0_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_index_meta_L|finger_index_0_L|finger_index_1_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_index_meta_L|finger_index_0_L|finger_index_1_L|finger_index_2_L.rotate',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_pinky_meta_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_pinky_meta_L|finger_pinky_0_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_pinky_meta_L|finger_pinky_0_L|finger_pinky_1_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_pinky_meta_L|finger_pinky_0_L|finger_pinky_1_L|finger_pinky_2_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_pinky_meta_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_pinky_meta_L|finger_pinky_0_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_pinky_meta_L|finger_pinky_0_L|finger_pinky_1_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_pinky_meta_L|finger_pinky_0_L|finger_pinky_1_L|finger_pinky_2_L.rotate',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_middle_meta_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_middle_meta_L|finger_middle_0_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_middle_meta_L|finger_middle_0_L|finger_middle_1_L.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_middle_meta_L|finger_middle_0_L|finger_middle_1_L|finger_middle_2_L.rotate',    
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_middle_meta_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_middle_meta_L|finger_middle_0_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_middle_meta_L|finger_middle_0_L|finger_middle_1_L.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|hand_L|finger_middle_meta_L|finger_middle_0_L|finger_middle_1_L|finger_middle_2_L.rotate',	
 
-		        ]
+				]
 
 
 
 
 
-		        RIGHT_FINGERS_SKELETON = [
-		            
+				RIGHT_FINGERS_SKELETON = [
+					
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_ring_meta_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_ring_meta_R|finger_ring_0_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_ring_meta_R|finger_ring_0_R|finger_ring_1_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_ring_meta_R|finger_ring_0_R|finger_ring_1_R|finger_ring_2_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_ring_meta_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_ring_meta_R|finger_ring_0_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_ring_meta_R|finger_ring_0_R|finger_ring_1_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_ring_meta_R|finger_ring_0_R|finger_ring_1_R|finger_ring_2_R.rotate',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_thumb_0_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_thumb_0_R|finger_thumb_1_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_thumb_0_R|finger_thumb_1_R|finger_thumb_2_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_thumb_0_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_thumb_0_R|finger_thumb_1_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_thumb_0_R|finger_thumb_1_R|finger_thumb_2_R.rotate',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_index_meta_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_index_meta_R|finger_index_0_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_index_meta_R|finger_index_0_R|finger_index_1_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_index_meta_R|finger_index_0_R|finger_index_1_R|finger_index_2_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_index_meta_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_index_meta_R|finger_index_0_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_index_meta_R|finger_index_0_R|finger_index_1_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_index_meta_R|finger_index_0_R|finger_index_1_R|finger_index_2_R.rotate',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_pinky_meta_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_pinky_meta_R|finger_pinky_0_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_pinky_meta_R|finger_pinky_0_R|finger_pinky_1_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_pinky_meta_R|finger_pinky_0_R|finger_pinky_1_R|finger_pinky_2_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_pinky_meta_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_pinky_meta_R|finger_pinky_0_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_pinky_meta_R|finger_pinky_0_R|finger_pinky_1_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_pinky_meta_R|finger_pinky_0_R|finger_pinky_1_R|finger_pinky_2_R.rotate',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_middle_meta_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_middle_meta_R|finger_middle_0_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_middle_meta_R|finger_middle_0_R|finger_middle_1_R.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_middle_meta_R|finger_middle_0_R|finger_middle_1_R|finger_middle_2_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_middle_meta_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_middle_meta_R|finger_middle_0_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_middle_meta_R|finger_middle_0_R|finger_middle_1_R.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|hand_R|finger_middle_meta_R|finger_middle_0_R|finger_middle_1_R|finger_middle_2_R.rotate',
 
-		        ]
+				]
 
 
 
@@ -2244,138 +2244,138 @@ class Customizer(object):
 
 
 
-		        #twists manul skeleton
+				#twists manul skeleton
 
-		        LONG_TWIST_SKELETON = [
-		            #left arm skeleton
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_upper_L_TWIST.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_upper_L_TWIST1.rotate',
+				LONG_TWIST_SKELETON = [
+					#left arm skeleton
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_upper_L_TWIST.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_upper_L_TWIST1.rotate',
 
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|arm_lower_L_TWIST.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|arm_lower_L_TWIST1.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|arm_lower_L_TWIST.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_L|arm_upper_L|arm_lower_L|arm_lower_L_TWIST1.rotate',
 
 
-		            #left arm skeleton
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_upper_R_TWIST.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_upper_R_TWIST1.rotate',
+					#left arm skeleton
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_upper_R_TWIST.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_upper_R_TWIST1.rotate',
 
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|arm_lower_R_TWIST.rotate',
-		            'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|arm_lower_R_TWIST1.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|arm_lower_R_TWIST.rotate',
+					'csgo_character|your_skeleton|pelvis|spine_0|spine_1|spine_2|spine_3|clavicle_R|arm_upper_R|arm_lower_R|arm_lower_R_TWIST1.rotate',
 
-		            #right arm skeleton
-		            
+					#right arm skeleton
+					
 
-		            #left leg skeleton
-		            'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_upper_L_TWIST.rotate',
-		            'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_upper_L_TWIST1.rotate',
+					#left leg skeleton
+					'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_upper_L_TWIST.rotate',
+					'csgo_character|your_skeleton|pelvis|leg_upper_L|leg_upper_L_TWIST1.rotate',
 
-		            #right leg skeleton
-		            'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_upper_R_TWIST.rotate',
-		            'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_upper_R_TWIST1.rotate',
+					#right leg skeleton
+					'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_upper_R_TWIST.rotate',
+					'csgo_character|your_skeleton|pelvis|leg_upper_R|leg_upper_R_TWIST1.rotate',
 
 
 
 
 
-		        ]
+				]
 
 
 
-		        #add constrains or connect attr
+				#add constrains or connect attr
 
-		        #character loop
+				#character loop
 
 
 
 
-		        #ogbje_parent = 'nurbsCircle1' + '.rotateX'   # ot kogo
-		        #object_chldr = 'locator1|locator2' + '.rotateX'  # komy
+				#ogbje_parent = 'nurbsCircle1' + '.rotateX'   # ot kogo
+				#object_chldr = 'locator1|locator2' + '.rotateX'  # komy
 
 
-		        #mc.connectAttr( ogbje_parent, object_chldr )
+				#mc.connectAttr( ogbje_parent, object_chldr )
 
 
-		        #costrain parent methond
-		        
-		        #spine neck clavilse loop
-		        for spine_arm_clavilse in range(0,len(LIST_RIG_DATA)):
-		            #parent constrain
-		            mc.parentConstraint(LIST_RIG_DATA[spine_arm_clavilse], LIST_SKELETON_CSGO_DATA[spine_arm_clavilse], maintainOffset = True)    
+				#costrain parent methond
+				
+				#spine neck clavilse loop
+				for spine_arm_clavilse in range(0,len(LIST_RIG_DATA)):
+					#parent constrain
+					mc.parentConstraint(LIST_RIG_DATA[spine_arm_clavilse], LIST_SKELETON_CSGO_DATA[spine_arm_clavilse], maintainOffset = True)	
 
 
-		        #loop leg
-		        for cotroller in range(0,len(LEG_RIG_DATA)): 
+				#loop leg
+				for cotroller in range(0,len(LEG_RIG_DATA)): 
 
-		            mc.parentConstraint(LEG_RIG_DATA[cotroller], LIST_SKELETON_LEGS[cotroller], maintainOffset = True)
+					mc.parentConstraint(LEG_RIG_DATA[cotroller], LIST_SKELETON_LEGS[cotroller], maintainOffset = True)
 
 
-		        #finger to connected rotation method
+				#finger to connected rotation method
 
-		        for left in range(0,len(LEFT_FINGERS_RIG)):
-		            mc.connectAttr( LEFT_FINGERS_RIG[left] , LEFT_FINGERS_SKELETON[left] )
-		        
+				for left in range(0,len(LEFT_FINGERS_RIG)):
+					mc.connectAttr( LEFT_FINGERS_RIG[left] , LEFT_FINGERS_SKELETON[left] )
+				
 
-		        for right in range(0,len(LEFT_FINGERS_RIG)):
-		            mc.connectAttr( RIGHT_FINGERS_RIG[right] , RIGHT_FINGERS_SKELETON[right] )
+				for right in range(0,len(LEFT_FINGERS_RIG)):
+					mc.connectAttr( RIGHT_FINGERS_RIG[right] , RIGHT_FINGERS_SKELETON[right] )
 
 
-		        #twists loop
-		        for twist in range(0,len(LONG_TWIST_RIG)):
-		            mc.connectAttr( LONG_TWIST_RIG[twist] , LONG_TWIST_SKELETON[twist] )
+				#twists loop
+				for twist in range(0,len(LONG_TWIST_RIG)):
+					mc.connectAttr( LONG_TWIST_RIG[twist] , LONG_TWIST_SKELETON[twist] )
 
 
 
-		        #invisible skeleton
-		        mc.setAttr('csgo_character|your_skeleton.visibility', 0)
+				#invisible skeleton
+				mc.setAttr('csgo_character|your_skeleton.visibility', 0)
 
-		        #delete from RAM data rig 
-		        del LIST_RIG_DATA
-		        del LEFT_FINGERS_RIG
-		        del RIGHT_FINGERS_RIG
-		        del LEG_RIG_DATA
+				#delete from RAM data rig 
+				del LIST_RIG_DATA
+				del LEFT_FINGERS_RIG
+				del RIGHT_FINGERS_RIG
+				del LEG_RIG_DATA
 
-		        #delete from RAM data skeleton 
-		        del LIST_SKELETON_CSGO_DATA
-		        del LIST_SKELETON_LEGS
-		        del LEFT_FINGERS_SKELETON
-		        del RIGHT_FINGERS_SKELETON
-		        
-		        #create layer mesh
-		        ln = 'csgo_mesh'
+				#delete from RAM data skeleton 
+				del LIST_SKELETON_CSGO_DATA
+				del LIST_SKELETON_LEGS
+				del LEFT_FINGERS_SKELETON
+				del RIGHT_FINGERS_SKELETON
+				
+				#create layer mesh
+				ln = 'csgo_mesh'
 
-		        path_for_layer = 'csgo_character|mesh'
-		        
-		        mc.createDisplayLayer(path_for_layer, name = ln)
+				path_for_layer = 'csgo_character|mesh'
+				
+				mc.createDisplayLayer(path_for_layer, name = ln)
 
-		        
-		        cmds.setAttr( '%s.displayType' % ln, 2)
+				
+				cmds.setAttr( '%s.displayType' % ln, 2)
 
 
 
-		        # Enable the layer's color.
-		        cmds.setAttr('%s.color' % ln, True)
+				# Enable the layer's color.
+				cmds.setAttr('%s.color' % ln, True)
 
-		        # Enable the layer's color to use rgb.
-		        cmds.setAttr('%s.overrideRGBColors' % ln, True)
+				# Enable the layer's color to use rgb.
+				cmds.setAttr('%s.overrideRGBColors' % ln, True)
 
-		        # Set the layer's color with values between 0-1.
-		        cmds.setAttr('%s.overrideColorRGB' % ln, 0, 1, 0)
+				# Set the layer's color with values between 0-1.
+				cmds.setAttr('%s.overrideColorRGB' % ln, 0, 1, 0)
 
 
 
 
 
-		        #export .ma\
-		        #name_save_fuile = FOLDER_EXPORT_MA_FILES_RIGS + import_model.replace('.qc.ModelFromBlender.fbx', '.mb')
-		        mc.file(save_path + '/' + name_file.replace('.ModelFromBlender.fbx', '') + name_maya_export_file,exportAll = 1, ignoreVersion = True ,force = 1, type = 'mayaBinary')
-		        mel.eval('file -f -new')
+				#export .ma\
+				#name_save_fuile = FOLDER_EXPORT_MA_FILES_RIGS + import_model.replace('.qc.ModelFromBlender.fbx', '.mb')
+				mc.file(save_path + '/' + name_file.replace('.ModelFromBlender.fbx', '') + name_maya_export_file,exportAll = 1, ignoreVersion = True ,force = 1, type = 'mayaBinary')
+				mel.eval('file -f -new')
 
 
-		    del fbx_path, save_path, file_rig_name, list_paths_fbx_models, mode_use
-		    mel.eval('file -f -new')
+			del fbx_path, save_path, file_rig_name, list_paths_fbx_models, mode_use
+			mel.eval('file -f -new')
 
-		    self.Final = True
+			self.Final = True
 		   	#open restart dialog
 
 		elif mode_use == 1:
